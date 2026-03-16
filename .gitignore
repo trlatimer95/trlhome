@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Environment
+.env
+.env.*
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Backup of original site
+_old/
+
+# Source photos (not needed in repo)
+/Portfolio/
+/Reviews/
+
+# Legacy files from original site (pre-Vite)
+/assets/
+/css/
+/js/
+/images/

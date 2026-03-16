@@ -1,0 +1,323 @@
+@import "tailwindcss";
+
+/* ===== Theme System ===== */
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+  --color-primary-50: var(--theme-primary-50);
+  --color-primary-100: var(--theme-primary-100);
+  --color-primary-200: var(--theme-primary-200);
+  --color-primary-500: var(--theme-primary-500);
+  --color-primary-600: var(--theme-primary-600);
+  --color-primary-700: var(--theme-primary-700);
+  --color-primary-900: var(--theme-primary-900);
+  --color-accent: var(--theme-accent);
+  --color-accent-dark: var(--theme-accent-dark);
+
+  --color-navy-800: #1e293b;
+  --color-navy-900: #0f172a;
+  --color-navy-950: #020617;
+}
+
+/* Default Theme: Professional Blue */
+:root {
+  --theme-primary-50: #eff6ff;
+  --theme-primary-100: #dbeafe;
+  --theme-primary-200: #bfdbfe;
+  --theme-primary-500: #3b82f6;
+  --theme-primary-600: #2563eb;
+  --theme-primary-700: #1d4ed8;
+  --theme-primary-900: #1e3a8a;
+  --theme-accent: #f59e0b;
+  --theme-accent-dark: #d97706;
+}
+
+/* Forest Green Theme */
+[data-theme="forest"] {
+  --theme-primary-50: #f0fdf4;
+  --theme-primary-100: #dcfce7;
+  --theme-primary-200: #bbf7d0;
+  --theme-primary-500: #22c55e;
+  --theme-primary-600: #16a34a;
+  --theme-primary-700: #15803d;
+  --theme-primary-900: #14532d;
+  --theme-accent: #eab308;
+  --theme-accent-dark: #ca8a04;
+}
+
+/* Slate Orange Theme */
+[data-theme="slate-orange"] {
+  --theme-primary-50: #fff7ed;
+  --theme-primary-100: #ffedd5;
+  --theme-primary-200: #fed7aa;
+  --theme-primary-500: #f97316;
+  --theme-primary-600: #ea580c;
+  --theme-primary-700: #c2410c;
+  --theme-primary-900: #7c2d12;
+  --theme-accent: #0ea5e9;
+  --theme-accent-dark: #0284c7;
+}
+
+/* ===== Base Styles ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: #1f2937;
+  overflow-x: hidden;
+}
+
+/* ===== Section Spacing ===== */
+.section-padding {
+  @apply py-16 md:py-24 px-4;
+}
+
+/* ===== Glass Header ===== */
+.header-glass {
+  @apply bg-navy-900/95 backdrop-blur-md shadow-lg;
+}
+
+/* ===== Hero Overlay ===== */
+.hero-overlay {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(15, 23, 42, 0.6) 50%, rgba(15, 23, 42, 0.75) 100%);
+}
+
+/* ===== Card Hover Effects ===== */
+.card-hover {
+  @apply transition-all duration-300 ease-out;
+}
+.card-hover:hover {
+  @apply -translate-y-1 shadow-xl;
+}
+
+/* ===== Scroll Animations ===== */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.animate-on-scroll.delay-100 { transition-delay: 0.1s; }
+.animate-on-scroll.delay-200 { transition-delay: 0.2s; }
+.animate-on-scroll.delay-300 { transition-delay: 0.3s; }
+.animate-on-scroll.delay-400 { transition-delay: 0.4s; }
+.animate-on-scroll.delay-500 { transition-delay: 0.5s; }
+
+/* ===== Before/After Slider ===== */
+.ba-slider {
+  position: relative;
+  overflow: hidden;
+  cursor: ew-resize;
+  user-select: none;
+}
+.ba-slider img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.ba-slider .ba-after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.ba-slider .ba-handle {
+  position: absolute;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: white;
+  cursor: ew-resize;
+  z-index: 10;
+  box-shadow: 0 0 8px rgba(0,0,0,0.4);
+}
+.ba-slider .ba-handle::after {
+  content: '\2039\2002\203A';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  letter-spacing: 4px;
+}
+.ba-slider::before {
+  content: 'BEFORE';
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 4px;
+  z-index: 5;
+  letter-spacing: 0.5px;
+  pointer-events: none;
+}
+.ba-slider::after {
+  content: 'AFTER';
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 4px;
+  z-index: 5;
+  letter-spacing: 0.5px;
+  pointer-events: none;
+}
+
+/* ===== Showcase (image-only, no slider) ===== */
+.ba-showcase {
+  position: relative;
+  overflow: hidden;
+}
+.ba-showcase img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===== Carousel (wraps ba-slider) ===== */
+.ba-carousel {
+  position: relative;
+}
+.ba-carousel-track {
+  position: relative;
+  overflow: hidden;
+}
+.ba-carousel-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+.ba-carousel-slide.active {
+  position: relative;
+  opacity: 1;
+  pointer-events: auto;
+}
+.ba-carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 0 0;
+}
+.ba-carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #d1d5db;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s, transform 0.2s;
+}
+.ba-carousel-dot.active {
+  background: var(--color-primary-600);
+  transform: scale(1.2);
+}
+.ba-carousel-dot:hover {
+  background: var(--color-primary-500);
+}
+.ba-carousel-label {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.6);
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 4px;
+  z-index: 5;
+  pointer-events: none;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+.ba-carousel-prev,
+.ba-carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 15;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+.ba-carousel-prev:hover,
+.ba-carousel-next:hover {
+  background: rgba(0,0,0,0.7);
+}
+.ba-carousel-prev { left: 8px; }
+.ba-carousel-next { right: 8px; }
+
+/* ===== Lightbox ===== */
+.lightbox-overlay {
+  @apply fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.lightbox-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.lightbox-overlay img {
+  max-width: 90vw;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* ===== Mobile Menu ===== */
+/* ===== Review Cards ===== */
+.review-card {
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.review-card:hover {
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.08);
+}
+
+/* ===== Mobile Menu ===== */
+.mobile-menu {
+  @apply max-h-0 overflow-hidden transition-all duration-300 ease-in-out;
+}
+.mobile-menu.open {
+  max-height: 400px;
+}
