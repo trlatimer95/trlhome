@@ -18,16 +18,3 @@ desktop.ini
 .idea/
 *.swp
 *.swo
-
-# Backup of original site
-_old/
-
-# Source photos (not needed in repo)
-/Portfolio/
-/Reviews/
-
-# Legacy files from original site (pre-Vite)
-/assets/
-/css/
-/js/
-/images/
