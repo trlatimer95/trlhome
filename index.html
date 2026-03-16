@@ -77,7 +77,13 @@
         </nav>
 
         <!-- CTA + Mobile Toggle -->
-        <div class="flex items-center gap-4">
+        <div class="flex items-center gap-3 sm:gap-4">
+          <!-- Mobile Call Button -->
+          <a href="tel:2085536162" class="md:hidden inline-flex items-center gap-1.5 bg-primary-600 text-white px-3 py-2 rounded-lg text-sm font-semibold transition-colors" aria-label="Call now">
+            <i class="fas fa-phone text-xs"></i>
+            <span class="hidden sm:inline">Call Now</span>
+          </a>
+          <!-- Desktop Phone + Quote -->
           <a href="tel:2085536162" class="hidden md:flex items-center gap-2 text-white font-semibold text-sm">
             <i class="fas fa-phone text-primary-500"></i>
             (208) 553-6162
@@ -117,7 +123,7 @@
     </div>
 
     <!-- Content -->
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pt-20">
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pt-24 sm:pt-20">
       <!-- Trust Badge -->
       <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
         <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
@@ -126,9 +132,9 @@
 
       <p class="text-primary-200 text-lg md:text-xl font-semibold tracking-widest uppercase mb-3">TRL Home Solutions</p>
 
-      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6">
-        SPOKANE VALLEY'S<br>
-        <span class="text-primary-500">TRUSTED HANDYMAN &</span><br>
+      <h1 class="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white leading-tight mb-6">
+        SPOKANE VALLEY'S<br class="hidden md:inline">
+        <span class="text-primary-500">TRUSTED HANDYMAN &</span><br class="hidden md:inline">
         GENERAL CONTRACTOR
       </h1>
 
