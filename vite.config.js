@@ -3,6 +3,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   plugins: [tailwindcss()],
+  base: process.env.GITHUB_PAGES ? '/trlhome/' : '/',
   build: {
     outDir: 'dist',
   },
