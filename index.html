@@ -4,6 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Content Security Policy -->
+  <!-- Note: frame-ancestors requires an HTTP header (not supported in <meta>); configure at the server level if possible -->
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://*.intuit.com https://*.sociablekit.com;
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://*.intuit.com;
+    font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:;
+    img-src 'self' https: data:;
+    connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com https://*.intuit.com https://*.sociablekit.com;
+    frame-src https://*.intuit.com;
+    object-src 'none';
+    base-uri 'self';
+  ">
+
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CDBGC4SGKY"></script>
   <script>
@@ -12,15 +26,23 @@
     gtag('js', new Date());
     gtag('config', 'G-CDBGC4SGKY');
   </script>
-  <title>TRL Home Solutions - Professional Handyman & General Contractor | Spokane Valley, WA</title>
-  <meta name="description" content="Family-owned handyman and general contractor in Spokane Valley, WA. From small repairs most contractors won't touch to complete remodels — we handle it all. Licensed in WA & ID.">
+  <title>TRL Home Solutions | Spokane Valley Handyman & Contractor</title>
+  <meta name="description" content="Family-owned handyman and general contractor in Spokane Valley, WA. From small repairs to complete remodels — we handle it all. Licensed in WA & ID.">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="TRL Home Solutions - Professional Handyman & General Contractor">
-  <meta property="og:description" content="Family-owned handyman and general contractor in Spokane Valley, WA. From small repairs to complete remodels.">
+  <meta property="og:title" content="TRL Home Solutions | Spokane Valley Handyman & Contractor">
+  <meta property="og:description" content="Family-owned handyman and general contractor in Spokane Valley, WA. From small repairs to complete remodels — we handle it all. Licensed in WA & ID.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://trlhomesolutions.com">
   <meta property="og:image" content="https://trlhomesolutions.com/images/hero/playArea.jpg">
+  <meta property="og:image:alt" content="TRL Home Solutions — Spokane Valley handyman and general contractor">
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TRL Home Solutions | Spokane Valley Handyman & Contractor">
+  <meta name="twitter:description" content="Family-owned handyman and general contractor in Spokane Valley, WA. From small repairs to complete remodels — we handle it all. Licensed in WA & ID.">
+  <meta name="twitter:image" content="https://trlhomesolutions.com/images/hero/playArea.jpg">
+  <meta name="twitter:image:alt" content="TRL Home Solutions — Spokane Valley handyman and general contractor">
 
   <!-- Canonical -->
   <link rel="canonical" href="https://trlhomesolutions.com">
@@ -50,6 +72,7 @@
     "url": "https://trlhomesolutions.com",
     "telephone": "+1-208-553-6162",
     "email": "tyler@trlhomesolutions.com",
+    "image": "https://trlhomesolutions.com/images/hero/playArea.jpg",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Spokane Valley",
@@ -59,7 +82,17 @@
     },
     "openingHours": ["Mo-Fr 09:00-17:00"],
     "priceRange": "$$",
-    "areaServed": ["Spokane Valley", "Spokane", "Coeur d'Alene", "Post Falls"]
+    "areaServed": ["Spokane Valley", "Spokane", "Coeur d'Alene", "Post Falls"],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "8",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "sameAs": [
+      "https://www.facebook.com/326254047248594"
+    ]
   }
   </script>
 </head>
@@ -895,7 +928,7 @@
             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
           </div>
           <span class="text-white font-semibold">5.0</span>
-          <span class="text-gray-400 text-sm">(7 reviews)</span>
+          <span class="text-gray-400 text-sm">(8 reviews)</span>
         </div>
         <div class="flex items-center gap-3 bg-white/10 rounded-xl px-5 py-3">
           <i class="fab fa-facebook text-[#1877F2] text-2xl"></i>
@@ -904,151 +937,27 @@
         </div>
       </div>
 
-      <!-- Review Cards Grid -->
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <!-- Live Review Widgets -->
+      <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
 
-        <!-- Google Review 1 -->
-        <div class="review-card bg-white/5 border border-white/10 rounded-2xl p-6">
-          <div class="flex items-center gap-3 mb-3">
-            <div class="w-10 h-10 rounded-full bg-amber-600 flex items-center justify-center text-white font-bold text-sm">M</div>
-            <div>
-              <p class="text-white font-semibold text-sm">Merlin Magers</p>
-              <div class="flex items-center gap-2">
-                <div class="flex text-yellow-400 text-xs gap-0.5">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                </div>
-                <span class="text-gray-500 text-xs">February 2026</span>
-              </div>
-            </div>
-            <img src="https://www.gstatic.com/images/branding/product/1x/googleg_48dp.png" alt="Google" class="w-5 h-5 ml-auto">
+        <!-- Google Reviews Widget -->
+        <div>
+          <div class="flex items-center gap-2 mb-4">
+            <img src="https://www.gstatic.com/images/branding/product/1x/googleg_48dp.png" alt="Google" class="w-5 h-5">
+            <span class="text-white font-semibold text-sm uppercase tracking-wide">Google Reviews</span>
           </div>
-          <p class="text-gray-300 text-sm leading-relaxed">Tyler was easy to work with. I had a small job so wasn't sure I'd find a contractor so easily. He was able to squeeze me in on a Saturday. He was efficient and quick. Thanks Tyler.</p>
+          <div class="sk-ww-google-reviews" data-embed-id="25669751"></div>
+          <script src="https://widgets.sociablekit.com/google-reviews/widget.js" defer></script>
         </div>
 
-        <!-- Google Review 2 -->
-        <div class="review-card bg-white/5 border border-white/10 rounded-2xl p-6">
-          <div class="flex items-center gap-3 mb-3">
-            <div class="w-10 h-10 rounded-full bg-orange-600 flex items-center justify-center text-white font-bold text-sm">J</div>
-            <div>
-              <p class="text-white font-semibold text-sm">Julie Kuhlmann</p>
-              <div class="flex items-center gap-2">
-                <div class="flex text-yellow-400 text-xs gap-0.5">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                </div>
-                <span class="text-gray-500 text-xs">November 2025</span>
-              </div>
-            </div>
-            <img src="https://www.gstatic.com/images/branding/product/1x/googleg_48dp.png" alt="Google" class="w-5 h-5 ml-auto">
+        <!-- Facebook Reviews Widget -->
+        <div>
+          <div class="flex items-center gap-2 mb-4">
+            <i class="fab fa-facebook text-[#1877F2] text-xl"></i>
+            <span class="text-white font-semibold text-sm uppercase tracking-wide">Facebook Reviews</span>
           </div>
-          <p class="text-gray-300 text-sm leading-relaxed">Being in real estate in both WA &amp; ID, I refer all my clients to Tyler as well as having him do work on my own home. His pricing is reasonable, he is thorough and very detail-oriented and most of all... he SHOWS UP and is ON TIME!</p>
-        </div>
-
-        <!-- Google Review 3 -->
-        <div class="review-card bg-white/5 border border-white/10 rounded-2xl p-6">
-          <div class="flex items-center gap-3 mb-3">
-            <div class="w-10 h-10 rounded-full bg-purple-600 flex items-center justify-center text-white font-bold text-sm">S</div>
-            <div>
-              <p class="text-white font-semibold text-sm">Sara DeBeaumont</p>
-              <div class="flex items-center gap-2">
-                <div class="flex text-yellow-400 text-xs gap-0.5">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                </div>
-                <span class="text-gray-500 text-xs">December 2024</span>
-              </div>
-            </div>
-            <img src="https://www.gstatic.com/images/branding/product/1x/googleg_48dp.png" alt="Google" class="w-5 h-5 ml-auto">
-          </div>
-          <p class="text-gray-300 text-sm leading-relaxed">Tyler is awesome. He has been our go to guy since we moved to Spokane in August. Our house needed a lot of repairs/upgrades and Tyler has done everything we've asked. His work is good and he is genuinely a nice person to have around.</p>
-        </div>
-
-        <!-- Google Review 4 -->
-        <div class="review-card bg-white/5 border border-white/10 rounded-2xl p-6">
-          <div class="flex items-center gap-3 mb-3">
-            <div class="w-10 h-10 rounded-full bg-red-600 flex items-center justify-center text-white font-bold text-sm">D</div>
-            <div>
-              <p class="text-white font-semibold text-sm">Debbie Frei</p>
-              <div class="flex items-center gap-2">
-                <div class="flex text-yellow-400 text-xs gap-0.5">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                </div>
-                <span class="text-gray-500 text-xs">July 2025</span>
-              </div>
-            </div>
-            <img src="https://www.gstatic.com/images/branding/product/1x/googleg_48dp.png" alt="Google" class="w-5 h-5 ml-auto">
-          </div>
-          <p class="text-gray-300 text-sm leading-relaxed">Tyler is very helpful every time he comes and does work. If something isn't quite right he takes the time to make it right and get the job done right the first time. I highly recommend TRL Solutions.</p>
-        </div>
-
-        <!-- Google Review 5 -->
-        <div class="review-card bg-white/5 border border-white/10 rounded-2xl p-6">
-          <div class="flex items-center gap-3 mb-3">
-            <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-sm">L</div>
-            <div>
-              <p class="text-white font-semibold text-sm">Lori LaGrange</p>
-              <div class="flex items-center gap-2">
-                <div class="flex text-yellow-400 text-xs gap-0.5">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                </div>
-                <span class="text-gray-500 text-xs">June 2025</span>
-              </div>
-            </div>
-            <img src="https://www.gstatic.com/images/branding/product/1x/googleg_48dp.png" alt="Google" class="w-5 h-5 ml-auto">
-          </div>
-          <p class="text-gray-300 text-sm leading-relaxed">I used TRL Home Solutions for a siding repair. Tyler was very professional, did a fantastic job and completed it quickly.</p>
-        </div>
-
-        <!-- Google Review 6 -->
-        <div class="review-card bg-white/5 border border-white/10 rounded-2xl p-6">
-          <div class="flex items-center gap-3 mb-3">
-            <div class="w-10 h-10 rounded-full bg-indigo-600 flex items-center justify-center text-white font-bold text-sm">T</div>
-            <div>
-              <p class="text-white font-semibold text-sm">Tommy S.</p>
-              <div class="flex items-center gap-2">
-                <div class="flex text-yellow-400 text-xs gap-0.5">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                </div>
-                <span class="text-gray-500 text-xs">May 2025</span>
-              </div>
-            </div>
-            <img src="https://www.gstatic.com/images/branding/product/1x/googleg_48dp.png" alt="Google" class="w-5 h-5 ml-auto">
-          </div>
-          <p class="text-gray-300 text-sm leading-relaxed">Tyler really takes the time to ensure every project is perfect. He never settles for "good enough" — he wants whatever project he is working on to last a very long time. If you want someone who takes pride in their work, look no further.</p>
-        </div>
-
-        <!-- Google Review 7 -->
-        <div class="review-card bg-white/5 border border-white/10 rounded-2xl p-6">
-          <div class="flex items-center gap-3 mb-3">
-            <div class="w-10 h-10 rounded-full bg-teal-600 flex items-center justify-center text-white font-bold text-sm">P</div>
-            <div>
-              <p class="text-white font-semibold text-sm">Patrice Jackson</p>
-              <div class="flex items-center gap-2">
-                <div class="flex text-yellow-400 text-xs gap-0.5">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                </div>
-                <span class="text-gray-500 text-xs">July 2025</span>
-              </div>
-            </div>
-            <img src="https://www.gstatic.com/images/branding/product/1x/googleg_48dp.png" alt="Google" class="w-5 h-5 ml-auto">
-          </div>
-          <p class="text-gray-300 text-sm leading-relaxed">Work is completed as scheduled and completed properly.</p>
-        </div>
-
-        <!-- Facebook Review -->
-        <div class="review-card bg-white/5 border border-white/10 rounded-2xl p-6">
-          <div class="flex items-center gap-3 mb-3">
-            <div class="w-10 h-10 rounded-full bg-gray-500 flex items-center justify-center text-white font-bold text-sm">T</div>
-            <div>
-              <p class="text-white font-semibold text-sm">Thomas Ehlers</p>
-              <div class="flex items-center gap-2">
-                <div class="flex text-yellow-400 text-xs gap-0.5">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                </div>
-                <span class="text-gray-500 text-xs">August 2024</span>
-              </div>
-            </div>
-            <i class="fab fa-facebook text-[#1877F2] text-xl ml-auto"></i>
-          </div>
-          <p class="text-gray-300 text-sm leading-relaxed">Absolutely amazing! Tyler handles it all! From installing garage door openers, to fixing outlets, even full bathroom renovations. No job is too big or small for him to handle. I highly recommend!</p>
+          <div class="sk-ww-facebook-page-reviews" data-embed-id="25663239"></div>
+          <script src="https://widgets.sociablekit.com/facebook-page-reviews/widget.js" defer></script>
         </div>
 
       </div>
@@ -1203,7 +1112,14 @@
           <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
             <h3 class="text-xl font-bold text-gray-900 mb-6">REQUEST A FREE QUOTE</h3>
             <!-- QuickBooks Online Request Form -->
-            <script id="intuit-form-295786" src="https://form-assets-prod.mcf-prod.a.intuit.com/snippet/account/249620407?formId=295786" async></script>
+            <script id="intuit-form-295786" src="https://form-assets-prod.mcf-prod.a.intuit.com/snippet/account/249620407?formId=295786" async
+              onerror="document.getElementById('intuit-form-fallback').style.display='block'"></script>
+            <div id="intuit-form-fallback" style="display:none" class="text-center py-6 text-gray-600">
+              <p class="mb-2">The quote form couldn't load. Please contact us directly:</p>
+              <a href="mailto:tyler@trlhomesolutions.com" class="text-primary-600 font-semibold hover:underline">tyler@trlhomesolutions.com</a>
+              <span class="mx-2">or</span>
+              <a href="tel:+12085536162" class="text-primary-600 font-semibold hover:underline">(208) 553-6162</a>
+            </div>
           </div>
         </div>
       </div>

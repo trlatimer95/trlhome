@@ -190,10 +190,12 @@ if (new URLSearchParams(window.location.search).has('theme')) {
   const switcher = document.getElementById('theme-switcher');
   switcher?.classList.remove('hidden');
 
+  const validThemes = ['forest', 'slate-orange'];
+
   switcher?.querySelectorAll('[data-set-theme]').forEach(btn => {
     btn.addEventListener('click', () => {
       const theme = btn.dataset.setTheme;
-      if (theme) {
+      if (theme && validThemes.includes(theme)) {
         document.documentElement.setAttribute('data-theme', theme);
       } else {
         document.documentElement.removeAttribute('data-theme');
@@ -207,7 +209,7 @@ if (new URLSearchParams(window.location.search).has('theme')) {
 
   // Restore saved theme
   const saved = localStorage.getItem('trl-theme');
-  if (saved) {
+  if (saved && validThemes.includes(saved)) {
     document.documentElement.setAttribute('data-theme', saved);
   }
 }
