@@ -8,12 +8,12 @@
   <!-- Note: frame-ancestors requires an HTTP header (not supported in <meta>); configure at the server level if possible -->
   <meta http-equiv="Content-Security-Policy" content="
     default-src 'self';
-    script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://*.intuit.com https://*.sociablekit.com;
-    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://*.intuit.com;
-    font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:;
+    script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://*.intuit.com https://*.sociablekit.com https://*.mailchimp.com;
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://*.intuit.com https://*.mailchimp.com https://use.typekit.net https://fast.fonts.net https://f.fontdeck.com;
+    font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com https://use.typekit.net https://fast.fonts.net https://f.fontdeck.com data:;
     img-src 'self' https: data:;
-    connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com https://*.intuit.com https://*.sociablekit.com;
-    frame-src https://*.intuit.com;
+    connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com https://*.intuit.com https://*.sociablekit.com https://*.mailchimp.com https://9kvu81ddh3.execute-api.us-east-2.amazonaws.com https://api.accentapi.com https://data.accentapi.com;
+    frame-src https://*.intuit.com https://*.sociablekit.com https://*.mailchimp.com;
     object-src 'none';
     base-uri 'self';
   ">
