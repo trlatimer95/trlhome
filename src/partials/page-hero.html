@@ -1,0 +1,25 @@
+  <!-- ===== PAGE HERO ===== -->
+  <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 px-4">
+    <div class="absolute inset-0">
+      <img src="{{image}}" alt="{{imageAlt}}" class="w-full h-full object-cover" fetchpriority="high">
+      <div class="hero-overlay absolute inset-0"></div>
+    </div>
+    <div class="relative z-10 max-w-7xl mx-auto">
+      <nav class="text-sm text-white/70 mb-6" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-white">Home</a>
+        <span class="mx-2">/</span>
+        <span class="text-white">{{crumb}}</span>
+      </nav>
+      <span class="text-primary-200 font-semibold text-sm uppercase tracking-widest">{{eyebrow}}</span>
+      <h1 class="text-3xl md:text-5xl font-extrabold text-white leading-tight mt-3 mb-5 max-w-3xl">{{title}}</h1>
+      <p class="text-lg text-gray-300 max-w-2xl leading-relaxed mb-8">{{intro}}</p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="#contact" class="inline-flex items-center justify-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-lg text-lg font-bold transition-colors shadow-lg">
+          GET FREE ESTIMATE <i class="fas fa-arrow-right"></i>
+        </a>
+        <a href="tel:2085536162" class="inline-flex items-center justify-center gap-2 border-2 border-white/30 hover:border-white/60 text-white px-8 py-4 rounded-lg text-lg font-bold transition-colors">
+          <i class="fas fa-phone"></i> (208) 553-6162
+        </a>
+      </div>
+    </div>
+  </section>

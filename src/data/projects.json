@@ -1,0 +1,581 @@
+[
+  {
+    "id": "presale-remodel",
+    "title": "Pre-sale Home Remodel",
+    "desc": "Full-home renovation to maximize sale value — entry, living areas, bedrooms, basement, stairs, deck, and exterior refresh.",
+    "tags": [
+      "remodel",
+      "punchlist",
+      "flooring",
+      "deck",
+      "basement"
+    ],
+    "featured": true,
+    "slides": [
+      {
+        "after": "/images/portfolio/hayden-remodel/entry-after.jpg",
+        "afterAlt": "Entry after remodel",
+        "before": "/images/portfolio/hayden-remodel/entry-before.jpg",
+        "beforeAlt": "Entry before remodel"
+      },
+      {
+        "after": "/images/portfolio/hayden-remodel/living-after.jpg",
+        "afterAlt": "Living room after remodel",
+        "before": "/images/portfolio/hayden-remodel/living-before.jpg",
+        "beforeAlt": "Living room before remodel"
+      },
+      {
+        "after": "/images/portfolio/hayden-remodel/hallway-after.jpg",
+        "afterAlt": "Hallway after remodel",
+        "before": "/images/portfolio/hayden-remodel/hallway-before.jpg",
+        "beforeAlt": "Hallway before remodel"
+      },
+      {
+        "after": "/images/portfolio/hayden-remodel/stairs-after.jpg",
+        "afterAlt": "Interior stairs after remodel",
+        "before": "/images/portfolio/hayden-remodel/stairs-before.jpg",
+        "beforeAlt": "Interior stairs before remodel"
+      },
+      {
+        "after": "/images/portfolio/hayden-remodel/basement-after.jpg",
+        "afterAlt": "Basement after remodel",
+        "before": "/images/portfolio/hayden-remodel/basement-before.jpg",
+        "beforeAlt": "Basement before remodel"
+      },
+      {
+        "after": "/images/portfolio/hayden-remodel/bedroom-after.jpg",
+        "afterAlt": "Bedroom after remodel",
+        "before": "/images/portfolio/hayden-remodel/bedroom-before.jpg",
+        "beforeAlt": "Bedroom before remodel"
+      },
+      {
+        "after": "/images/portfolio/hayden-remodel/deck-after.jpg",
+        "afterAlt": "Deck after remodel",
+        "before": "/images/portfolio/hayden-remodel/deck-before.jpg",
+        "beforeAlt": "Deck before remodel"
+      },
+      {
+        "after": "/images/portfolio/hayden-remodel/exterior-after.jpg",
+        "afterAlt": "Front exterior after remodel"
+      }
+    ]
+  },
+  {
+    "id": "basement-remodel",
+    "title": "Basement Remodel",
+    "desc": "Complete transformation — LVP flooring, recessed lighting, egress windows, new bathroom with glass shower &amp; vanity.",
+    "tags": [
+      "basement",
+      "bathroom",
+      "flooring",
+      "remodel"
+    ],
+    "featured": true,
+    "slides": [
+      {
+        "after": "/images/portfolio/basement-remodel/floor-after-1.jpg",
+        "afterAlt": "Basement floor after",
+        "before": "/images/portfolio/basement-remodel/floor-before-1.jpg",
+        "beforeAlt": "Basement floor before"
+      },
+      {
+        "after": "/images/portfolio/basement-remodel/floor-after-2.jpg",
+        "afterAlt": "Basement floor after angle 2",
+        "before": "/images/portfolio/basement-remodel/floor-before-2.jpg",
+        "beforeAlt": "Basement floor before angle 2"
+      },
+      {
+        "after": "/images/portfolio/basement-remodel/floor-after-3.jpg",
+        "afterAlt": "Basement floor after angle 3",
+        "before": "/images/portfolio/basement-remodel/floor-before-3.jpg",
+        "beforeAlt": "Basement floor before angle 3"
+      },
+      {
+        "after": "/images/portfolio/basement-remodel/bath-after-1.jpg",
+        "afterAlt": "Basement bathroom after",
+        "before": "/images/portfolio/basement-remodel/bath-before-1.jpg",
+        "beforeAlt": "Basement bathroom before"
+      },
+      {
+        "after": "/images/portfolio/basement-remodel/bath-after-3.jpg",
+        "afterAlt": "Full basement bathroom after",
+        "before": "/images/portfolio/basement-remodel/bath-before-3.jpg",
+        "beforeAlt": "Basement room before"
+      },
+      {
+        "after": "/images/portfolio/basement-remodel/bath-after-2.jpg",
+        "afterAlt": "Glass shower close-up",
+        "before": "/images/portfolio/basement-remodel/bath-before-2.jpg",
+        "beforeAlt": "Basement bathroom area before"
+      }
+    ]
+  },
+  {
+    "id": "kitchen-remodel",
+    "title": "Kitchen Remodel",
+    "desc": "Painted cabinets, epoxy countertops, tile backsplash, island installation, and new LVP flooring.",
+    "tags": [
+      "kitchen",
+      "remodel"
+    ],
+    "featured": true,
+    "slides": [
+      {
+        "after": "/images/portfolio/kitchen-remodel/after.jpg",
+        "afterAlt": "Kitchen remodel after",
+        "before": "/images/portfolio/kitchen-remodel/before.jpg",
+        "beforeAlt": "Kitchen remodel before"
+      },
+      {
+        "after": "/images/portfolio/kitchen-remodel/counter-1.jpg",
+        "afterAlt": "Epoxy countertop sink closeup"
+      },
+      {
+        "after": "/images/portfolio/kitchen-remodel/counter-2.jpg",
+        "afterAlt": "Epoxy countertop side angle"
+      },
+      {
+        "after": "/images/portfolio/kitchen-remodel/counter-3.jpg",
+        "afterAlt": "Epoxy countertop wide shot"
+      }
+    ]
+  },
+  {
+    "id": "bathroom-remodel",
+    "title": "Bathroom Remodel",
+    "desc": "Full bathroom renovation — new vanity, epoxy countertop, painted cabinets, and dark tile flooring.",
+    "tags": [
+      "bathroom",
+      "remodel"
+    ],
+    "featured": true,
+    "slides": [
+      {
+        "after": "/images/portfolio/bathroom-remodel/after.jpg",
+        "afterAlt": "Bathroom remodel after",
+        "before": "/images/portfolio/bathroom-remodel/before.jpg",
+        "beforeAlt": "Bathroom remodel before"
+      }
+    ]
+  },
+  {
+    "id": "exterior-stair-repair",
+    "title": "Exterior Stair &amp; Rot Repair",
+    "desc": "Rot turned up behind an exterior staircase during a pre-sale punch list. We cut out the damage, repaired the framing and built new stairs, then replaced the treads on the second set of steps.",
+    "tags": [
+      "punchlist",
+      "carpentry",
+      "exterior",
+      "handyman"
+    ],
+    "featured": true,
+    "slides": [
+      {
+        "after": "/images/portfolio/exterior-stair-repair/01-rot-found.jpg",
+        "afterAlt": "Rotted sheathing and framing found behind an exterior staircase",
+        "caption": "Rot found behind the stairs"
+      },
+      {
+        "after": "/images/portfolio/exterior-stair-repair/02-rot-detail.jpg",
+        "afterAlt": "Close-up of rotted rim framing at the door threshold",
+        "caption": "Extent of the damage"
+      },
+      {
+        "after": "/images/portfolio/exterior-stair-repair/03-framing-repaired.jpg",
+        "afterAlt": "Exposed wall framing and insulation after damaged material was removed",
+        "caption": "Damaged material removed, framing repaired"
+      },
+      {
+        "after": "/images/portfolio/exterior-stair-repair/04-new-stairs.jpg",
+        "afterAlt": "New exterior stairs built at a patio door",
+        "caption": "New stairs built"
+      },
+      {
+        "after": "/images/portfolio/exterior-stair-repair/05-finished-stairs.jpg",
+        "afterAlt": "Finished exterior stairs with new door trim",
+        "caption": "Finished stairs and door trim"
+      },
+      {
+        "after": "/images/portfolio/exterior-stair-repair/06-both-sets.jpg",
+        "afterAlt": "Two sets of finished exterior steps along the back of a home",
+        "caption": "Both sets of steps complete"
+      }
+    ]
+  },
+  {
+    "id": "basement-bedrooms",
+    "title": "Basement Bedrooms",
+    "desc": "Removed wood paneling, new drywall, fresh paint with accent walls, new doors, and egress windows.",
+    "tags": [
+      "basement",
+      "remodel"
+    ],
+    "featured": true,
+    "slides": [
+      {
+        "after": "/images/portfolio/basement-bedroom/after-1.jpg",
+        "afterAlt": "Basement bedroom after",
+        "before": "/images/portfolio/basement-bedroom/before-1.jpg",
+        "beforeAlt": "Basement bedroom before"
+      },
+      {
+        "after": "/images/portfolio/basement-bedroom/after-2.jpg",
+        "afterAlt": "Basement bedroom 2 after",
+        "before": "/images/portfolio/basement-bedroom/before-2.jpg",
+        "beforeAlt": "Basement bedroom 2 before"
+      }
+    ]
+  },
+  {
+    "id": "shed-conversion",
+    "title": "Shed Conversion",
+    "desc": "Converted a standard shed into a functional living space — insulation, flooring, interior finishing, and mini-split HVAC installation.",
+    "tags": [
+      "remodel",
+      "carpentry",
+      "exterior"
+    ],
+    "featured": true,
+    "slides": [
+      {
+        "after": "/images/portfolio/shed-conversion/exterior1.jpg",
+        "afterAlt": "Shed conversion exterior"
+      },
+      {
+        "after": "/images/portfolio/shed-conversion/interior1.jpg",
+        "afterAlt": "Shed conversion interior"
+      },
+      {
+        "after": "/images/portfolio/shed-conversion/interior2.jpg",
+        "afterAlt": "Shed conversion interior angle 2"
+      },
+      {
+        "after": "/images/portfolio/shed-conversion/floor1.jpg",
+        "afterAlt": "Shed conversion flooring"
+      },
+      {
+        "after": "/images/portfolio/shed-conversion/minisplit.jpg",
+        "afterAlt": "Shed conversion mini-split install"
+      }
+    ]
+  },
+  {
+    "id": "presale-punchlist-details",
+    "title": "Pre-Sale Punch List Details",
+    "desc": "The smaller fixes from the same pre-sale punch list: replaced door trim, new door knobs, repaired bifold closet doors and new floor vents.",
+    "tags": [
+      "punchlist",
+      "carpentry",
+      "handyman"
+    ],
+    "featured": false,
+    "slides": [
+      {
+        "after": "/images/portfolio/presale-punchlist-details/01-exterior-door.jpg",
+        "afterAlt": "Exterior door with new trim",
+        "caption": "Exterior door and trim"
+      },
+      {
+        "after": "/images/portfolio/presale-punchlist-details/02-interior-door.jpg",
+        "afterAlt": "Interior door with new knob and trim",
+        "caption": "Interior door, new trim and knob",
+        "fit": "contain"
+      },
+      {
+        "after": "/images/portfolio/presale-punchlist-details/03-closet-doors.jpg",
+        "afterAlt": "Repaired bifold closet doors in a bedroom",
+        "caption": "Bifold closet doors repaired",
+        "fit": "contain"
+      },
+      {
+        "after": "/images/portfolio/presale-punchlist-details/04-floor-vent.jpg",
+        "afterAlt": "New floor vent cover installed on a hardwood floor",
+        "caption": "New floor vent"
+      }
+    ]
+  },
+  {
+    "id": "room-repair-flooring",
+    "title": "Room Repair, Flooring &amp; Trim",
+    "desc": "Drywall patch, insulation, moisture barrier, flooring reinstalled and new trim. The homeowner chose to handle the final paint.",
+    "tags": [
+      "flooring",
+      "carpentry",
+      "handyman"
+    ],
+    "featured": false,
+    "slides": [
+      {
+        "after": "/images/portfolio/room-repair-flooring/01-finished-room.jpg",
+        "afterAlt": "Room with repaired drywall, reinstalled flooring and new baseboard trim",
+        "caption": "Patched wall, reinstalled floor, new trim",
+        "fit": "contain"
+      }
+    ]
+  },
+  {
+    "id": "bathroom-tile",
+    "title": "Bathroom Tile",
+    "desc": "Demo, sheetrock patching, ceiling float &amp; texture, shower pan install, and full shower &amp; floor tiling.",
+    "tags": [
+      "bathroom",
+      "tile"
+    ],
+    "featured": false,
+    "slides": [
+      {
+        "after": "/images/portfolio/bathroom-tile/after.jpg",
+        "afterAlt": "Bathroom tile after",
+        "before": "/images/portfolio/bathroom-tile/before.jpg",
+        "beforeAlt": "Bathroom tile before"
+      }
+    ]
+  },
+  {
+    "id": "bathroom-finish-subcontract",
+    "title": "Bathroom Finish Work",
+    "desc": "Subcontract finish work on a general contractor&rsquo;s design: sheetrock hung, taped, textured, primed and painted; vanity, wallpaper, shower and floor tile, shower bench, grab bars and accessories installed.",
+    "tags": [
+      "bathroom",
+      "tile"
+    ],
+    "featured": false,
+    "slides": [
+      {
+        "after": "/images/portfolio/bathroom-finish-subcontract/01-bathroom.jpg",
+        "afterAlt": "Finished bathroom with tiled walk-in shower, patterned tile floor, wallpapered vanity wall and gold fixtures",
+        "caption": "Subcontract work for a general contractor",
+        "fit": "contain"
+      }
+    ]
+  },
+  {
+    "id": "lvp-flooring",
+    "title": "LVP Flooring Install",
+    "desc": "Whole-home luxury vinyl plank installation — hallway, living room, dining room, kitchen, entry, and bathroom.",
+    "tags": [
+      "flooring"
+    ],
+    "featured": false,
+    "slides": [
+      {
+        "after": "/images/portfolio/22nd-ct-flooring/hallway-after.jpg",
+        "afterAlt": "Hallway LVP flooring after",
+        "before": "/images/portfolio/22nd-ct-flooring/hallway-before.jpg",
+        "beforeAlt": "Hallway before flooring"
+      },
+      {
+        "after": "/images/portfolio/22nd-ct-flooring/living-after.jpg",
+        "afterAlt": "Living room LVP flooring after",
+        "before": "/images/portfolio/22nd-ct-flooring/living-before.jpg",
+        "beforeAlt": "Living room before flooring"
+      },
+      {
+        "after": "/images/portfolio/22nd-ct-flooring/dining-after.jpg",
+        "afterAlt": "Dining room LVP flooring after",
+        "before": "/images/portfolio/22nd-ct-flooring/dining-before.jpg",
+        "beforeAlt": "Dining room before flooring"
+      },
+      {
+        "after": "/images/portfolio/22nd-ct-flooring/bathroom-after.jpg",
+        "afterAlt": "Bathroom LVP flooring after",
+        "before": "/images/portfolio/22nd-ct-flooring/bathroom-before.jpg",
+        "beforeAlt": "Bathroom before flooring"
+      },
+      {
+        "after": "/images/portfolio/22nd-ct-flooring/entry-after.jpg",
+        "afterAlt": "Entry with new LVP flooring"
+      },
+      {
+        "after": "/images/portfolio/22nd-ct-flooring/kitchen-after.jpg",
+        "afterAlt": "Kitchen with new LVP flooring"
+      }
+    ]
+  },
+  {
+    "id": "flooring-install",
+    "title": "Flooring Install",
+    "desc": "Replaced old parquet and carpet with durable LVP flooring throughout kitchen, stairs, and living areas.",
+    "tags": [
+      "flooring"
+    ],
+    "featured": false,
+    "slides": [
+      {
+        "after": "/images/portfolio/flooring-install/kitchen-after.jpg",
+        "afterAlt": "Kitchen floor after",
+        "before": "/images/portfolio/flooring-install/kitchen-before.jpg",
+        "beforeAlt": "Kitchen floor before"
+      },
+      {
+        "after": "/images/portfolio/flooring-install/stairs-after.jpg",
+        "afterAlt": "Stairs after",
+        "before": "/images/portfolio/flooring-install/stairs-before.jpg",
+        "beforeAlt": "Stairs before"
+      }
+    ]
+  },
+  {
+    "id": "deck-restoration",
+    "title": "Deck Restoration",
+    "desc": "Sanded and restored a weathered, peeling deck back to beautiful natural wood finish.",
+    "tags": [
+      "deck",
+      "exterior"
+    ],
+    "featured": false,
+    "slides": [
+      {
+        "after": "/images/portfolio/deck-restoration/after.jpg",
+        "afterAlt": "Deck restoration after",
+        "before": "/images/portfolio/deck-restoration/before.jpg",
+        "beforeAlt": "Deck restoration before"
+      }
+    ]
+  },
+  {
+    "id": "hallway-wainscoting",
+    "title": "Hallway Wainscoting",
+    "desc": "Installed wainscoting panels and fresh paint to add character and a finished look to the hallway.",
+    "tags": [
+      "carpentry"
+    ],
+    "featured": false,
+    "slides": [
+      {
+        "after": "/images/portfolio/hallway-wainscoting/after.jpg",
+        "afterAlt": "Hallway wainscoting after",
+        "before": "/images/portfolio/hallway-wainscoting/before.jpg",
+        "beforeAlt": "Hallway wainscoting before"
+      }
+    ]
+  },
+  {
+    "id": "sliding-door-trim",
+    "title": "Sliding Door Trim",
+    "desc": "Replaced and finished trim around sliding door for a clean, polished look.",
+    "tags": [
+      "carpentry",
+      "handyman"
+    ],
+    "featured": false,
+    "slides": [
+      {
+        "after": "/images/portfolio/sliding-door/after.jpg",
+        "afterAlt": "Sliding door trim after",
+        "before": "/images/portfolio/sliding-door/before.jpg",
+        "beforeAlt": "Sliding door trim before"
+      }
+    ]
+  },
+  {
+    "id": "window-sills",
+    "title": "Window Sills",
+    "desc": "Repaired and refinished damaged window sills — restoring a clean, polished look.",
+    "tags": [
+      "carpentry",
+      "handyman"
+    ],
+    "featured": false,
+    "slides": [
+      {
+        "after": "/images/portfolio/window-sills/sill1After.jpg",
+        "afterAlt": "Window sill 1 after",
+        "before": "/images/portfolio/window-sills/sill1Before.jpg",
+        "beforeAlt": "Window sill 1 before"
+      },
+      {
+        "after": "/images/portfolio/window-sills/sill2After.jpg",
+        "afterAlt": "Window sill 2 after",
+        "before": "/images/portfolio/window-sills/sill2Before.jpg",
+        "beforeAlt": "Window sill 2 before"
+      }
+    ]
+  },
+  {
+    "id": "bedroom-renovation",
+    "title": "Bedroom Renovation",
+    "desc": "Removed wallpaper, fresh paint with accent walls, and new carpet for clean, modern bedrooms.",
+    "tags": [
+      "remodel",
+      "handyman"
+    ],
+    "featured": false,
+    "slides": [
+      {
+        "after": "/images/portfolio/bedroom-renovation/after-1.jpg",
+        "afterAlt": "Bedroom 1 after",
+        "before": "/images/portfolio/bedroom-renovation/before-1.jpg",
+        "beforeAlt": "Bedroom 1 before"
+      },
+      {
+        "after": "/images/portfolio/bedroom-renovation/after-2.jpg",
+        "afterAlt": "Bedroom 2 after",
+        "before": "/images/portfolio/bedroom-renovation/before-2.jpg",
+        "beforeAlt": "Bedroom 2 before"
+      }
+    ]
+  },
+  {
+    "id": "vanity-painting",
+    "title": "Vanity Painting",
+    "desc": "Transformed dated oak vanities with bold paint, new hardware, and modern faucets.",
+    "tags": [
+      "bathroom",
+      "handyman"
+    ],
+    "featured": false,
+    "slides": [
+      {
+        "after": "/images/portfolio/vanity-painting/after-1.jpg",
+        "afterAlt": "Single vanity after",
+        "before": "/images/portfolio/vanity-painting/before-1.jpg",
+        "beforeAlt": "Single vanity before"
+      },
+      {
+        "after": "/images/portfolio/vanity-painting/after-2.jpg",
+        "afterAlt": "Double vanity after",
+        "before": "/images/portfolio/vanity-painting/before-2.jpg",
+        "beforeAlt": "Double vanity before"
+      }
+    ]
+  },
+  {
+    "id": "commercial-paint",
+    "title": "Commercial Paint",
+    "desc": "Large-scale commercial interior painting — hallways, offices, and front desk areas refreshed with a clean, professional finish.",
+    "tags": [
+      "commercial",
+      "handyman"
+    ],
+    "featured": false,
+    "slides": [
+      {
+        "after": "/images/portfolio/commercial-paint/frontDesk1After.jpg",
+        "afterAlt": "Front desk after painting",
+        "before": "/images/portfolio/commercial-paint/frontDesk1Before.jpg",
+        "beforeAlt": "Front desk before painting"
+      },
+      {
+        "after": "/images/portfolio/commercial-paint/lowerHallwayAfter.jpg",
+        "afterAlt": "Lower hallway after painting",
+        "before": "/images/portfolio/commercial-paint/lowerHallwayBefore.jpg",
+        "beforeAlt": "Lower hallway before painting"
+      },
+      {
+        "after": "/images/portfolio/commercial-paint/upperHallwayAfter1.jpg",
+        "afterAlt": "Upper hallway after painting",
+        "before": "/images/portfolio/commercial-paint/upperHallwayBefore1.jpg",
+        "beforeAlt": "Upper hallway before painting"
+      },
+      {
+        "after": "/images/portfolio/commercial-paint/frontOfficeAfter.jpg",
+        "afterAlt": "Front office after painting"
+      },
+      {
+        "after": "/images/portfolio/commercial-paint/office1After.jpg",
+        "afterAlt": "Office after painting"
+      }
+    ]
+  }
+]

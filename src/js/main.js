@@ -182,53 +182,145 @@ document.querySelectorAll('.ba-carousel').forEach(carousel => {
   }
 });
 
-// ===== Contact Form (Web3Forms) =====
-const contactForm = document.getElementById('contact-form');
-const formStatus = document.getElementById('form-status');
+// ===== Forms (Web3Forms) =====
+// Any <form data-web3form data-subject="..."> is submitted by email. Each form needs a
+// [data-form-status] element inside it for success/error messages.
+document.querySelectorAll('form[data-web3form]').forEach(form => {
+  const status = form.querySelector('[data-form-status]');
 
-contactForm?.addEventListener('submit', async (e) => {
-  e.preventDefault();
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
 
-  const formData = new FormData(contactForm);
-  formData.append('access_key', '38361931-adfa-4bbf-96d1-1af4e518a8cf');
-  formData.append('subject', 'New Quote Request - TRL Home Solutions');
-  formData.append('from_name', 'TRL Website');
-  formData.append('botcheck', '');
+    const formData = new FormData(form);
+    formData.append('access_key', '38361931-adfa-4bbf-96d1-1af4e518a8cf');
+    formData.append('subject', form.dataset.subject || 'New Website Inquiry - TRL Home Solutions');
+    formData.append('from_name', 'TRL Website');
+    formData.append('page', window.location.pathname);
 
-  const submitBtn = contactForm.querySelector('button[type="submit"]');
-  const originalText = submitBtn.textContent;
-  submitBtn.textContent = 'Sending...';
-  submitBtn.disabled = true;
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
 
-  try {
-    const response = await fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      body: formData,
-    });
-    const result = await response.json();
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData,
+      });
+      const result = await response.json();
 
-    if (result.success) {
-      showFormStatus('success', 'Thank you! We\'ll get back to you within 24 hours.');
-      contactForm.reset();
-    } else {
-      showFormStatus('error', 'Something went wrong. Please call us at (208) 553-6162.');
+      if (result.success) {
+        showFormStatus(status, 'success', 'Thank you! We\'ll get back to you within 24 hours.');
+        form.reset();
+        applyServiceDefault(form);
+      } else {
+        showFormStatus(status, 'error', 'Something went wrong. Please call us at (208) 553-6162.');
+      }
+    } catch {
+      showFormStatus(status, 'error', 'Network error. Please call us at (208) 553-6162.');
+    } finally {
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
     }
-  } catch {
-    showFormStatus('error', 'Network error. Please call us at (208) 553-6162.');
-  } finally {
-    submitBtn.textContent = originalText;
-    submitBtn.disabled = false;
-  }
+  });
+
+  applyServiceDefault(form);
 });
 
-function showFormStatus(type, message) {
-  formStatus.className = type === 'success'
+// Pre-select the project type on service pages (<select data-default="basement">)
+function applyServiceDefault(form) {
+  const select = form.querySelector('select[data-default]');
+  if (select && select.dataset.default) select.value = select.dataset.default;
+}
+
+function showFormStatus(el, type, message) {
+  if (!el) return;
+  el.className = type === 'success'
     ? 'p-4 rounded-lg bg-green-50 text-green-700 text-sm font-medium'
     : 'p-4 rounded-lg bg-red-50 text-red-700 text-sm font-medium';
-  formStatus.textContent = message;
-  formStatus.classList.remove('hidden');
-  setTimeout(() => formStatus.classList.add('hidden'), 8000);
+  el.textContent = message;
+  el.classList.remove('hidden');
+  setTimeout(() => el.classList.add('hidden'), 8000);
 }
+
+// ===== Hero Carousel =====
+document.querySelectorAll('[data-hero-carousel]').forEach(carousel => {
+  const slides = [...carousel.querySelectorAll('.hero-slide')];
+  const dots = [...carousel.querySelectorAll('.hero-dot')];
+  const caption = carousel.querySelector('[data-hero-caption]');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let current = 0;
+  let timer = null;
+
+  // Lazy slides keep their image in data-src until they are needed
+  function load(slide) {
+    slide?.querySelectorAll('img[data-src]').forEach(img => {
+      img.src = img.dataset.src;
+      img.removeAttribute('data-src');
+    });
+  }
+
+  function show(index) {
+    slides[current].classList.remove('active');
+    dots[current]?.classList.remove('active');
+    current = (index + slides.length) % slides.length;
+    load(slides[current]);
+    slides[current].classList.add('active');
+    dots[current]?.classList.add('active');
+    if (caption) caption.textContent = slides[current].dataset.caption || '';
+  }
+
+  function start() {
+    if (reduceMotion || timer) return;
+    timer = setInterval(() => show(current + 1), 6000);
+  }
+  function stop() {
+    clearInterval(timer);
+    timer = null;
+  }
+  function restart() {
+    stop();
+    start();
+  }
+
+  dots.forEach((dot, i) => dot.addEventListener('click', () => { show(i); restart(); }));
+  carousel.querySelector('[data-hero-prev]')?.addEventListener('click', () => { show(current - 1); restart(); });
+  carousel.querySelector('[data-hero-next]')?.addEventListener('click', () => { show(current + 1); restart(); });
+
+  carousel.addEventListener('mouseenter', stop);
+  carousel.addEventListener('mouseleave', start);
+  carousel.addEventListener('focusin', stop);
+  carousel.addEventListener('focusout', start);
+  document.addEventListener('visibilitychange', () => (document.hidden ? stop() : start()));
+
+  // Preload the second image once the page has loaded so the first fade is smooth
+  window.addEventListener('load', () => load(slides[1]));
+
+  start();
+});
+
+// ===== Project Filters =====
+document.querySelectorAll('[data-project-filters]').forEach(bar => {
+  const grid = document.querySelector('[data-project-grid]');
+  if (!grid) return;
+  const cards = [...grid.querySelectorAll('.project-card')];
+  const buttons = [...bar.querySelectorAll('[data-filter]')];
+
+  function apply(filter) {
+    const wanted = filter === 'all' ? null : filter.split(' ');
+    cards.forEach(card => {
+      const tags = card.dataset.tags.split(' ');
+      card.classList.toggle('hidden', wanted !== null && !wanted.some(t => tags.includes(t)));
+    });
+    buttons.forEach(b => {
+      const on = b.dataset.filter === filter;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-pressed', on);
+    });
+  }
+
+  buttons.forEach(b => b.addEventListener('click', () => apply(b.dataset.filter)));
+});
 
 // ===== Theme Switcher (dev only) =====
 if (new URLSearchParams(window.location.search).has('theme')) {
