@@ -1,0 +1,77 @@
+  <!-- ===== HEADER ===== -->
+  <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-navy-900/90 backdrop-blur-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center justify-between h-16 md:h-20">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-3">
+          <img src="/images/logo/TRLbutton.png" alt="TRL Home Solutions" class="h-10 md:h-12 w-auto">
+          <span class="text-white font-bold text-xl hidden sm:block tracking-wide">TRL HOME SOLUTIONS</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden lg:flex items-center gap-7" aria-label="Main">
+          <div class="relative group">
+            <a href="/#services" class="text-gray-300 hover:text-white text-sm font-medium transition-colors inline-flex items-center gap-1.5 py-6">
+              Remodeling <i class="fas fa-chevron-down text-[10px]"></i>
+            </a>
+            <div class="absolute left-0 top-full w-64 bg-navy-900 border border-white/10 rounded-xl shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all">
+              <a href="/basement-remodeling/" class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Basement Remodeling</a>
+              <a href="/bathroom-remodeling/" class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Bathroom Remodeling</a>
+              <a href="/kitchens/" class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Kitchens</a>
+              <a href="/decks/" class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Decks</a>
+              <a href="/flooring-tile/" class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Flooring &amp; Tile</a>
+              <a href="/finish-carpentry/" class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Finish Carpentry</a>
+            </div>
+          </div>
+          <a href="/handyman/" class="text-gray-300 hover:text-white text-sm font-medium transition-colors">Handyman</a>
+          <a href="/punchlists/" class="text-gray-300 hover:text-white text-sm font-medium transition-colors">Punchlists</a>
+          <a href="/projects/" class="text-gray-300 hover:text-white text-sm font-medium transition-colors">Projects</a>
+          <a href="/#reviews" class="text-gray-300 hover:text-white text-sm font-medium transition-colors">Reviews</a>
+          <a href="/#about" class="text-gray-300 hover:text-white text-sm font-medium transition-colors">About</a>
+        </nav>
+
+        <!-- CTA + Mobile Toggle -->
+        <div class="flex items-center gap-3 sm:gap-4">
+          <!-- Mobile Call Button -->
+          <a href="tel:2085536162" class="md:hidden inline-flex items-center gap-1.5 bg-primary-600 text-white px-3 py-2 rounded-lg text-sm font-semibold transition-colors" aria-label="Call now">
+            <i class="fas fa-phone text-xs"></i>
+            <span class="hidden sm:inline">Call Now</span>
+          </a>
+          <!-- Desktop Phone + Quote -->
+          <a href="tel:2085536162" class="hidden md:flex items-center gap-2 text-white font-semibold text-sm">
+            <i class="fas fa-phone text-primary-500"></i>
+            (208) 553-6162
+          </a>
+          <a href="#contact" class="hidden md:inline-flex bg-primary-600 hover:bg-primary-700 text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition-colors">
+            Get Free Estimate
+          </a>
+          <button id="mobile-toggle" class="lg:hidden text-white text-2xl" aria-label="Toggle menu">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="mobile-menu lg:hidden">
+        <div class="pb-4 space-y-1">
+          <p class="text-gray-500 text-xs font-semibold uppercase tracking-wider pt-2">Remodeling</p>
+          <a href="/basement-remodeling/" class="block text-gray-300 hover:text-white py-1.5 pl-3 text-sm font-medium">Basement Remodeling</a>
+          <a href="/bathroom-remodeling/" class="block text-gray-300 hover:text-white py-1.5 pl-3 text-sm font-medium">Bathroom Remodeling</a>
+          <a href="/kitchens/" class="block text-gray-300 hover:text-white py-1.5 pl-3 text-sm font-medium">Kitchens</a>
+          <a href="/decks/" class="block text-gray-300 hover:text-white py-1.5 pl-3 text-sm font-medium">Decks</a>
+          <a href="/flooring-tile/" class="block text-gray-300 hover:text-white py-1.5 pl-3 text-sm font-medium">Flooring &amp; Tile</a>
+          <a href="/finish-carpentry/" class="block text-gray-300 hover:text-white py-1.5 pl-3 text-sm font-medium">Finish Carpentry</a>
+          <p class="text-gray-500 text-xs font-semibold uppercase tracking-wider pt-3">More</p>
+          <a href="/handyman/" class="block text-gray-300 hover:text-white py-1.5 pl-3 text-sm font-medium">Handyman Services</a>
+          <a href="/punchlists/" class="block text-gray-300 hover:text-white py-1.5 pl-3 text-sm font-medium">Pre &amp; Post-Sale Punchlists</a>
+          <a href="/projects/" class="block text-gray-300 hover:text-white py-1.5 pl-3 text-sm font-medium">Our Projects</a>
+          <a href="/#reviews" class="block text-gray-300 hover:text-white py-1.5 pl-3 text-sm font-medium">Reviews</a>
+          <a href="/#about" class="block text-gray-300 hover:text-white py-1.5 pl-3 text-sm font-medium">About</a>
+          <a href="#contact" class="block text-gray-300 hover:text-white py-1.5 pl-3 text-sm font-medium">Contact</a>
+          <a href="tel:2085536162" class="block text-primary-500 py-2 text-sm font-semibold">
+            <i class="fas fa-phone mr-2"></i>(208) 553-6162
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
