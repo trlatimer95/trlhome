@@ -214,10 +214,10 @@ document.querySelectorAll('form[data-web3form]').forEach(form => {
         form.reset();
         applyServiceDefault(form);
       } else {
-        showFormStatus(status, 'error', 'Something went wrong. Please call us at (208) 553-6162.');
+        showFormStatus(status, 'error', 'Something went wrong. Please call us at (509) 210-5010.');
       }
     } catch {
-      showFormStatus(status, 'error', 'Network error. Please call us at (208) 553-6162.');
+      showFormStatus(status, 'error', 'Network error. Please call us at (509) 210-5010.');
     } finally {
       submitBtn.textContent = originalText;
       submitBtn.disabled = false;
