@@ -32,7 +32,7 @@ What changed:
 - Schema: service pages pass `image`; `Service` now has `serviceType`, `image`, provider `address` and `@id` linking to the home `HomeAndConstructionBusiness`; `areaServed` as `City` objects.
 - `public/_headers` (new): CSP, HSTS, nosniff, referrer and permissions policies, one-year cache for `/assets/*`. Ignored by GitHub Pages; takes effect on Cloudflare Pages.
 
-Update 2026-11-05: the site now runs on Cloudflare as a Git-connected Workers static-assets project named `trlhome` (nameservers moved to Cloudflare, apex and www custom domains attached, `wrangler.jsonc` sets 404-page handling, `_headers` verified live: CSP, HSTS, nosniff, one-year asset cache). The GitHub Actions workflow and `public/CNAME` were removed. Still open: the "Licensed & Insured" wording check (S5), optional gtag deferral (P4) and `review` schema items (S2). `/projects/` mobile is at 80 because it loads 20 carousels; a further step would be lazy-loading non-active carousel slides.
+Update 2026-11-05: the site now runs on Cloudflare as a Git-connected Workers static-assets project named `trlhome` (nameservers moved to Cloudflare, apex and www custom domains attached, `wrangler.jsonc` sets 404-page handling, `_headers` verified live: CSP, HSTS, nosniff, one-year asset cache). The GitHub Actions workflow and `public/CNAME` were removed. S5 resolved 2026-11-05: TRL carries general liability, so "Licensed & Insured" stays. Still open: optional gtag deferral (P4) and `review` schema items (S2). `/projects/` mobile is at 80 because it loads 20 carousels; a further step would be lazy-loading non-active carousel slides.
 
 ## 1. Summary
 

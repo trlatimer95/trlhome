@@ -8,11 +8,11 @@
   <!-- Note: frame-ancestors requires an HTTP header (not supported in <meta>); configure at the server level if possible -->
   <meta http-equiv="Content-Security-Policy" content="
     default-src 'self';
-    script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com;
+    script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://static.cloudflareinsights.com;
     style-src 'self' 'unsafe-inline';
     font-src 'self';
     img-src 'self' https: data:;
-    connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com https://api.web3forms.com;
+    connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com https://api.web3forms.com https://cloudflareinsights.com;
     frame-src 'self';
     object-src 'none';
     base-uri 'self';
