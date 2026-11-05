@@ -34,6 +34,25 @@ What changed:
 
 Update 2026-11-05: the site now runs on Cloudflare as a Git-connected Workers static-assets project named `trlhome` (nameservers moved to Cloudflare, apex and www custom domains attached, `wrangler.jsonc` sets 404-page handling, `_headers` verified live: CSP, HSTS, nosniff, one-year asset cache). The GitHub Actions workflow and `public/CNAME` were removed. S5 resolved 2026-11-05: TRL carries general liability, so "Licensed & Insured" stays. Still open: optional gtag deferral (P4) and `review` schema items (S2). `/projects/` mobile is at 80 because it loads 20 carousels; a further step would be lazy-loading non-active carousel slides.
 
+## 0b. Live results on Cloudflare (2026-11-05)
+
+Lighthouse run against `https://trlhomesolutions.com` over the real network (served by Cloudflare over HTTP/3), same settings as before. Real-network mobile numbers vary a few points between runs.
+
+| Page | Mobile perf | Desktop perf | A11y | Best practices | SEO |
+|------|-------------|--------------|------|----------------|-----|
+| `/` | 84 | 93 | 100 | 82 | 100 |
+| `/kitchens/` | 80 | 98 | 100 | 82 | 100 |
+| `/punchlists/` | 79 | 94 | 100 | 82 | 100 |
+| `/projects/` | 75 | 92 | 100 | 82 | 100 |
+
+Fixes made from the live run:
+
+- The Cloudflare Web Analytics beacon was being injected and blocked by the CSP (two console errors per page). `static.cloudflareinsights.com` and `cloudflareinsights.com` are now allowed in both the meta CSP and `_headers`.
+- HSTS now carries `preload`; `/images/*` caches for a year.
+- Inactive carousel slides deferred their images (`data-src`) and load when shown. `/projects/` went from 50 images / 3.7 MB on load to 13 images / 0.85 MB, and its simulated mobile LCP from 14.6 s to 6.4 s.
+
+Best practices sits at 82 only because Cloudflare's bot-detection script (`/cdn-cgi/challenge-platform/...`) triggers three browser deprecation warnings. Turning off JavaScript Detections under Security, Bots in the Cloudflare dashboard removes the script and the warnings; it is not needed for a static site. Remaining optional work: defer `gtag.js` (177 KB, the largest download on every page) until after load (P4).
+
 ## 1. Summary
 
 The site is in good shape on SEO, best practices and most accessibility checks (100 / 100 / 92-96). The one real problem is **mobile performance**: every page scores in the mid-60s because hero images are 400-800 KB JPEGs served at full size, plus three render-blocking third-party requests (Google Fonts, Font Awesome, gtag). Largest Contentful Paint on throttled mobile is 8-11 seconds against a 2.5 s target. Fixing images alone should move mobile into the 85-95 range.
