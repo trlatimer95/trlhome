@@ -51,7 +51,7 @@ Fixes made from the live run:
 - HSTS now carries `preload`; `/images/*` caches for a year.
 - Inactive carousel slides deferred their images (`data-src`) and load when shown. `/projects/` went from 50 images / 3.7 MB on load to 13 images / 0.85 MB, and its simulated mobile LCP from 14.6 s to 6.4 s.
 
-Best practices sits at 82 only because Cloudflare's bot-detection script (`/cdn-cgi/challenge-platform/...`) triggers three browser deprecation warnings. Turning off JavaScript Detections under Security, Bots in the Cloudflare dashboard removes the script and the warnings; it is not needed for a static site. Remaining optional work: defer `gtag.js` (177 KB, the largest download on every page) until after load (P4).
+Best practices sits at 82 only because Cloudflare's bot-detection script (`/cdn-cgi/challenge-platform/...`) triggers three browser deprecation warnings. Turning off JavaScript Detections under Security, Bots in the Cloudflare dashboard removes the script and the warnings; it is not needed for a static site. GA4 was then removed entirely (2026-11-05): analytics is Cloudflare Web Analytics only, injected by Cloudflare, so the 177 KB gtag download is gone and the CSP lists only self, Web3Forms and the Cloudflare beacon. P4 is therefore closed.
 
 ## 1. Summary
 
