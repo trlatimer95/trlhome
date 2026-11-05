@@ -53,6 +53,22 @@ Fixes made from the live run:
 
 Best practices sits at 82 only because Cloudflare's bot-detection script (`/cdn-cgi/challenge-platform/...`) triggers three browser deprecation warnings. Turning off JavaScript Detections under Security, Bots in the Cloudflare dashboard removes the script and the warnings; it is not needed for a static site. GA4 was then removed entirely (2026-11-05): analytics is Cloudflare Web Analytics only, injected by Cloudflare, so the 177 KB gtag download is gone and the CSP lists only self, Web3Forms and the Cloudflare beacon. P4 is therefore closed.
 
+## 0c. Security review (2026-11-05)
+
+Checked after the move: CSP, inline script usage, response headers, TLS, dependencies, secrets, DNS and email authentication.
+
+Fixed in the repo:
+- `script-src` no longer allows `'unsafe-inline'`. With GA4 gone there are no inline scripts (JSON-LD blocks do not execute), so the policy is now `'self'` plus the Cloudflare beacon host. `style-src` keeps `'unsafe-inline'` because the before/after sliders use `style="left:50%"` attributes.
+- `npm audit fix` cleared five dev-only advisories (vite, esbuild, postcss, nanoid, source-map-js); production has no runtime dependencies.
+- No secrets in the repo. The Web3Forms access key in `src/js/main.js` is a public, per-site key by design; it only lets someone send email to the business through the form endpoint, and the honeypot field is in place. Web3Forms hCaptcha is available if spam ever becomes a problem.
+
+To do in dashboards (not possible from the repo):
+- **Email authentication (highest value).** The domain has SPF (`-all`) but no DMARC record and no DKIM CNAMEs, so anyone can spoof tyler@trlhomesolutions.com with better odds of landing in an inbox. Add a `_dmarc` TXT of `v=DMARC1; p=quarantine; rua=mailto:tyler@trlhomesolutions.com` (start with `p=none` for a week if unsure), and enable DKIM for the domain in the Microsoft 365 admin center, which gives two `selector1/selector2._domainkey` CNAMEs to add in Cloudflare DNS.
+- **Minimum TLS 1.2.** The edge still accepts TLS 1.1. Cloudflare, SSL/TLS, Edge Certificates, Minimum TLS Version: 1.2.
+- **DNSSEC.** Cloudflare, DNS, Settings, Enable DNSSEC, then add the DS record it shows at GoDaddy. Prevents DNS hijacking of the domain.
+- **Account hygiene.** Two-factor on Cloudflare, GitHub and GoDaddy; the GitHub repo should stay private or have branch protection on main since every push deploys.
+- **HSTS preload** is in the header; submitting at hstspreload.org is optional and permanent.
+
 ## 1. Summary
 
 The site is in good shape on SEO, best practices and most accessibility checks (100 / 100 / 92-96). The one real problem is **mobile performance**: every page scores in the mid-60s because hero images are 400-800 KB JPEGs served at full size, plus three render-blocking third-party requests (Google Fonts, Font Awesome, gtag). Largest Contentful Paint on throttled mobile is 8-11 seconds against a 2.5 s target. Fixing images alone should move mobile into the 85-95 range.
