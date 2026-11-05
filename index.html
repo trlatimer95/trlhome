@@ -5,6 +5,7 @@
   {
     "@context": "https://schema.org",
     "@type": "HomeAndConstructionBusiness",
+    "@id": "https://trlhomesolutions.com/#business",
     "name": "TRL Home Solutions",
     "description": "Family-owned remodeling contractor and handyman in Spokane Valley, WA. Big projects, small jobs, one local crew.",
     "url": "https://trlhomesolutions.com",
@@ -37,25 +38,26 @@
 <body class="bg-white">
 
 <!--@include header-->
+<main id="main">
 
   <!-- ===== HERO ===== -->
   <section id="home" class="relative min-h-screen flex items-center" data-hero-carousel>
     <!-- Background carousel -->
     <div class="absolute inset-0 bg-navy-900">
       <div class="hero-slide active" data-caption="Pre-Sale Home Remodel">
-        <img src="/images/portfolio/hayden-remodel/living-after.jpg" alt="Open living and kitchen area with new LVP flooring" fetchpriority="high">
+        <!--@img src="/images/portfolio/hayden-remodel/living-after.jpg" alt="Open living and kitchen area with new LVP flooring" sizes="100vw" fetchpriority="high"-->
       </div>
       <div class="hero-slide" data-caption="Basement Remodel">
-        <img data-src="/images/portfolio/basement-remodel/floor-after-1.jpg" alt="Remodeled basement living area with new flooring and recessed lighting">
+        <!--@img src="/images/portfolio/basement-remodel/floor-after-1.jpg" alt="Remodeled basement living area with new flooring and recessed lighting" sizes="100vw" lazy="data"-->
       </div>
       <div class="hero-slide" data-caption="Basement Bathroom">
-        <img data-src="/images/portfolio/basement-remodel/bath-after-3.jpg" alt="Basement bathroom with glass shower and new vanity">
+        <!--@img src="/images/portfolio/basement-remodel/bath-after-3.jpg" alt="Basement bathroom with glass shower and new vanity" sizes="100vw" lazy="data"-->
       </div>
       <div class="hero-slide" data-caption="Deck Refresh">
-        <img data-src="/images/portfolio/hayden-remodel/deck-after.jpg" alt="Refreshed deck with new surface and painted railings">
+        <!--@img src="/images/portfolio/hayden-remodel/deck-after.jpg" alt="Refreshed deck with new surface and painted railings" sizes="100vw" lazy="data"-->
       </div>
       <div class="hero-slide" data-caption="Shed Conversion">
-        <img data-src="/images/portfolio/shed-conversion/exterior1.jpg" alt="Backyard shed converted into a finished space">
+        <!--@img src="/images/portfolio/shed-conversion/exterior1.jpg" alt="Backyard shed converted into a finished space" sizes="100vw" lazy="data"-->
       </div>
       <div class="hero-overlay absolute inset-0"></div>
     </div>
@@ -109,15 +111,15 @@
 
       <!-- Carousel controls -->
       <div class="flex items-center gap-4">
-        <button class="hero-arrow" data-hero-prev aria-label="Previous photo"><i class="fas fa-chevron-left text-sm"></i></button>
+        <button type="button" class="hero-arrow" data-hero-prev aria-label="Previous photo"><i class="fas fa-chevron-left text-sm"></i></button>
         <div class="flex items-center gap-2" role="group" aria-label="Choose photo">
-          <button class="hero-dot active" aria-label="Photo 1"></button>
-          <button class="hero-dot" aria-label="Photo 2"></button>
-          <button class="hero-dot" aria-label="Photo 3"></button>
-          <button class="hero-dot" aria-label="Photo 4"></button>
-          <button class="hero-dot" aria-label="Photo 5"></button>
+          <button type="button" class="hero-dot active" aria-label="Photo 1" aria-current="true"></button>
+          <button type="button" class="hero-dot" aria-label="Photo 2"></button>
+          <button type="button" class="hero-dot" aria-label="Photo 3"></button>
+          <button type="button" class="hero-dot" aria-label="Photo 4"></button>
+          <button type="button" class="hero-dot" aria-label="Photo 5"></button>
         </div>
-        <button class="hero-arrow" data-hero-next aria-label="Next photo"><i class="fas fa-chevron-right text-sm"></i></button>
+        <button type="button" class="hero-arrow" data-hero-next aria-label="Next photo"><i class="fas fa-chevron-right text-sm"></i></button>
         <span class="text-white/80 text-sm font-medium" data-hero-caption aria-live="off">Pre-Sale Home Remodel</span>
       </div>
     </div>
@@ -346,7 +348,7 @@
 
         <div class="animate-on-scroll delay-200">
           <div class="relative rounded-2xl overflow-hidden">
-            <img src="/images/portfolio/basement-remodel/bath-after-3.jpg" alt="Basement bathroom remodeled by TRL Home Solutions" class="w-full h-96 object-cover" loading="lazy">
+            <!--@img src="/images/portfolio/basement-remodel/bath-after-3.jpg" alt="Basement bathroom remodeled by TRL Home Solutions" class="w-full h-96 object-cover" sizes="(min-width: 1024px) 600px, 100vw" loading="lazy" decoding="async"-->
             <div class="absolute inset-0 bg-gradient-to-t from-navy-900/80 to-transparent"></div>
             <div class="absolute bottom-0 left-0 right-0 p-6">
               <div class="flex flex-col gap-2">
@@ -367,6 +369,8 @@
   </section>
 
 <!--@include contact-->
+
+</main>
 
 <!--@include footer-->
 </body>

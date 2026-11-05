@@ -1,8 +1,9 @@
 @import "tailwindcss";
+@import "@fontsource-variable/inter";
 
 /* ===== Theme System ===== */
 @theme {
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-sans: 'Inter Variable', 'Inter', system-ui, -apple-system, sans-serif;
 
   --color-primary-50: var(--theme-primary-50);
   --color-primary-100: var(--theme-primary-100);
@@ -61,6 +62,45 @@
 /* ===== Base Styles ===== */
 html {
   scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+/* Visible keyboard focus everywhere (mouse clicks do not show it) */
+:focus-visible {
+  outline: 3px solid var(--color-primary-500);
+  outline-offset: 2px;
+}
+
+/* Skip link: hidden until focused */
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  background: var(--color-primary-600);
+  color: white;
+  font-weight: 700;
+  transform: translateY(-120%);
+  transition: transform 0.15s;
+}
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+/* Inline SVG icons (replaces the Font Awesome webfont). In the components layer so
+   utilities like `hidden` still win. */
+@layer components {
+  .fa-icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.125em;
+    fill: currentColor;
+    flex-shrink: 0;
+  }
 }
 
 body {
@@ -129,15 +169,36 @@ body {
   height: 100%;
   overflow: hidden;
 }
+/* 24px-wide invisible hit area; the visible 4px line is drawn by ::before */
 .ba-slider .ba-handle {
   position: absolute;
   top: 0;
+  width: 24px;
+  height: 100%;
+  margin-left: -12px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: ew-resize;
+  z-index: 10;
+  touch-action: none;
+}
+.ba-slider .ba-handle::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10px;
   width: 4px;
   height: 100%;
   background: white;
-  cursor: ew-resize;
-  z-index: 10;
   box-shadow: 0 0 8px rgba(0,0,0,0.4);
+}
+.ba-slider .ba-handle:focus-visible {
+  outline: none;
+}
+.ba-slider .ba-handle:focus-visible::after {
+  outline: 3px solid var(--color-primary-500);
+  outline-offset: 2px;
 }
 .ba-slider .ba-handle::after {
   content: '\2039\2002\203A';
@@ -234,22 +295,24 @@ body {
   gap: 8px;
   padding: 10px 0 0;
 }
+/* 10px visual dot inside a 24px hit area */
 .ba-carousel-dot {
-  width: 10px;
-  height: 10px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   background: #d1d5db;
+  background-clip: content-box;
   border: none;
   cursor: pointer;
-  padding: 0;
-  transition: background 0.2s, transform 0.2s;
+  padding: 7px;
+  transition: background-color 0.2s, padding 0.2s;
 }
 .ba-carousel-dot.active {
-  background: var(--color-primary-600);
-  transform: scale(1.2);
+  background-color: var(--color-primary-600);
+  padding: 6px;
 }
 .ba-carousel-dot:hover {
-  background: var(--color-primary-500);
+  background-color: var(--color-primary-500);
 }
 .ba-carousel-label {
   position: absolute;
@@ -276,8 +339,8 @@ body {
   top: 50%;
   transform: translateY(-50%);
   z-index: 15;
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background: rgba(0,0,0,0.5);
   color: white;
@@ -354,18 +417,19 @@ section[id] {
   object-fit: cover;
 }
 .hero-dot {
-  width: 10px;
-  height: 10px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.4);
+  background-clip: content-box;
   border: none;
-  padding: 0;
+  padding: 7px;
   cursor: pointer;
-  transition: background 0.2s, transform 0.2s;
+  transition: background-color 0.2s, padding 0.2s;
 }
 .hero-dot.active {
-  background: white;
-  transform: scale(1.25);
+  background-color: white;
+  padding: 6px;
 }
 .hero-arrow {
   width: 40px;

@@ -3,15 +3,28 @@
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "{{name}}",
+    "serviceType": "{{name}}",
     "description": "{{description}}",
     "url": "https://trlhomesolutions.com{{path}}",
+    "image": "https://trlhomesolutions.com{{image}}",
     "provider": {
       "@type": "HomeAndConstructionBusiness",
+      "@id": "https://trlhomesolutions.com/#business",
       "name": "TRL Home Solutions",
       "telephone": "+1-509-210-5010",
-      "url": "https://trlhomesolutions.com"
+      "url": "https://trlhomesolutions.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Spokane Valley",
+        "addressRegion": "WA",
+        "postalCode": "99216",
+        "addressCountry": "US"
+      }
     },
-    "areaServed": ["Spokane Valley, WA", "Spokane, WA"]
+    "areaServed": [
+      { "@type": "City", "name": "Spokane Valley", "containedInPlace": { "@type": "State", "name": "Washington" } },
+      { "@type": "City", "name": "Spokane", "containedInPlace": { "@type": "State", "name": "Washington" } }
+    ]
   }
   </script>
 </head>

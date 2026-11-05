@@ -2,21 +2,19 @@
 const mobileToggle = document.getElementById('mobile-toggle');
 const mobileMenu = document.getElementById('mobile-menu');
 
-mobileToggle?.addEventListener('click', () => {
-  mobileMenu.classList.toggle('open');
-  const icon = mobileToggle.querySelector('i');
-  icon.classList.toggle('fa-bars');
-  icon.classList.toggle('fa-times');
-});
+function setMenu(open) {
+  mobileMenu.classList.toggle('open', open);
+  mobileToggle.setAttribute('aria-expanded', String(open));
+  mobileToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  mobileToggle.querySelector('[data-icon="open"]')?.classList.toggle('hidden', open);
+  mobileToggle.querySelector('[data-icon="close"]')?.classList.toggle('hidden', !open);
+}
+
+mobileToggle?.addEventListener('click', () => setMenu(!mobileMenu.classList.contains('open')));
 
 // Close mobile menu on link click
 mobileMenu?.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    mobileMenu.classList.remove('open');
-    const icon = mobileToggle.querySelector('i');
-    icon.classList.add('fa-bars');
-    icon.classList.remove('fa-times');
-  });
+  link.addEventListener('click', () => setMenu(false));
 });
 
 // ===== Header Scroll Effect =====
@@ -93,13 +91,30 @@ function initSlider(slider) {
 
   let dragging = false;
 
-  function setPosition(x) {
-    const rect = slider.getBoundingClientRect();
-    let pct = ((x - rect.left) / rect.width) * 100;
+  function setPct(pct) {
     pct = Math.max(0, Math.min(100, pct));
     handle.style.left = pct + '%';
     afterWrap.style.width = pct + '%';
+    handle.setAttribute('aria-valuenow', Math.round(pct));
+    handle.setAttribute('aria-valuetext', Math.round(pct) + '% after');
   }
+
+  function setPosition(x) {
+    const rect = slider.getBoundingClientRect();
+    setPct(((x - rect.left) / rect.width) * 100);
+  }
+
+  // Keyboard: arrows move 5% (20% with Shift), Home/End jump to the ends
+  handle.addEventListener('keydown', (e) => {
+    const cur = Number(handle.getAttribute('aria-valuenow')) || 50;
+    const step = e.shiftKey ? 20 : 5;
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') setPct(cur - step);
+    else if (e.key === 'ArrowRight' || e.key === 'ArrowUp') setPct(cur + step);
+    else if (e.key === 'Home') setPct(0);
+    else if (e.key === 'End') setPct(100);
+    else return;
+    e.preventDefault();
+  });
 
   handle.addEventListener('mousedown', (e) => { dragging = true; e.preventDefault(); });
   handle.addEventListener('touchstart', () => { dragging = true; }, { passive: true });
@@ -114,8 +129,7 @@ function initSlider(slider) {
     setPosition(e.clientX);
   });
 
-  afterWrap.style.width = '50%';
-  handle.style.left = '50%';
+  setPct(50);
 }
 
 // Init all standalone sliders (not inside carousels)
@@ -132,9 +146,11 @@ document.querySelectorAll('.ba-carousel').forEach(carousel => {
   function goTo(index) {
     slides[current].classList.remove('active');
     dots[current]?.classList.remove('active');
+    dots[current]?.removeAttribute('aria-current');
     current = (index + slides.length) % slides.length;
     slides[current].classList.add('active');
     dots[current]?.classList.add('active');
+    dots[current]?.setAttribute('aria-current', 'true');
     // Reset slider handle to 50% when switching slides
     const slider = slides[current].querySelector('.ba-slider');
     if (slider) {
@@ -252,9 +268,13 @@ document.querySelectorAll('[data-hero-carousel]').forEach(carousel => {
   let current = 0;
   let timer = null;
 
-  // Lazy slides keep their image in data-src until they are needed
+  // Lazy slides keep their image in data-src/data-srcset until they are needed
   function load(slide) {
     slide?.querySelectorAll('img[data-src]').forEach(img => {
+      if (img.dataset.srcset) {
+        img.srcset = img.dataset.srcset;
+        img.removeAttribute('data-srcset');
+      }
       img.src = img.dataset.src;
       img.removeAttribute('data-src');
     });
@@ -267,6 +287,7 @@ document.querySelectorAll('[data-hero-carousel]').forEach(carousel => {
     load(slides[current]);
     slides[current].classList.add('active');
     dots[current]?.classList.add('active');
+    dots.forEach((d, i) => (i === current ? d.setAttribute('aria-current', 'true') : d.removeAttribute('aria-current')));
     if (caption) caption.textContent = slides[current].dataset.caption || '';
   }
 
