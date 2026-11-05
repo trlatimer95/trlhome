@@ -8,26 +8,18 @@
   <!-- Note: frame-ancestors requires an HTTP header (not supported in <meta>); configure at the server level if possible -->
   <meta http-equiv="Content-Security-Policy" content="
     default-src 'self';
-    script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://static.cloudflareinsights.com;
+    script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com;
     style-src 'self' 'unsafe-inline';
     font-src 'self';
     img-src 'self' https: data:;
-    connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com https://api.web3forms.com https://cloudflareinsights.com;
+    connect-src 'self' https://api.web3forms.com https://cloudflareinsights.com;
     frame-src 'self';
     object-src 'none';
     base-uri 'self';
     form-action 'self' https://api.web3forms.com;
   ">
 
-  <!-- Google Analytics -->
-  <link rel="preconnect" href="https://www.googletagmanager.com">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CDBGC4SGKY"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-CDBGC4SGKY');
-  </script>
+  <!-- Analytics: Cloudflare Web Analytics is injected by Cloudflare (its beacon is allowed in the CSP above) -->
 
   <title>{{title}}</title>
   <meta name="description" content="{{description}}">
