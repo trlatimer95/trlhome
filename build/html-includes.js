@@ -34,11 +34,14 @@ function renderPartial(name, attrs) {
 const img = (src, alt, extra = {}) => responsiveImg({ src, alt, sizes: CARD_SIZES, loading: 'lazy', decoding: 'async', ...extra });
 
 // Before/after pair. The handle is a real button so keyboard users can move it.
-function renderPair(slide, label) {
+// Inactive carousel slides keep their images in data-src until shown (see main.js);
+// they sit absolutely positioned inside the viewport, so loading="lazy" alone would fetch them.
+function renderPair(slide, label, deferred = false) {
+  const extra = deferred ? { lazy: 'data' } : {};
   return `
                 <div class="ba-slider aspect-[4/3]">
-                  ${img(slide.after, slide.afterAlt)}
-                  <div class="ba-after">${img(slide.before, slide.beforeAlt)}</div>
+                  ${img(slide.after, slide.afterAlt, extra)}
+                  <div class="ba-after">${img(slide.before, slide.beforeAlt, extra)}</div>
                   <button type="button" class="ba-handle" style="left:50%" role="slider" aria-label="Compare before and after${label ? ': ' + label : ''}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-valuetext="50% after"></button>
                 </div>`;
 }
@@ -49,14 +52,14 @@ function renderSlide(slide, first, title) {
   const caption = slide.caption ? `\n                <span class="ba-carousel-label">${slide.caption}</span>` : '';
   if (slide.before) {
     return `
-              <div class="ba-carousel-slide${eager}">${renderPair(slide, slide.caption || title)}${caption}
+              <div class="ba-carousel-slide${eager}">${renderPair(slide, slide.caption || title, !first)}${caption}
               </div>`;
   }
   const fit = slide.fit === 'contain' ? ' contain' : '';
   return `
               <div class="ba-carousel-slide${eager}">
                 <div class="ba-showcase${fit} aspect-[4/3]">
-                  ${img(slide.after, slide.afterAlt)}
+                  ${img(slide.after, slide.afterAlt, first ? {} : { lazy: 'data' })}
                 </div>${caption}
               </div>`;
 }

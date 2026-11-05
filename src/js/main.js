@@ -135,6 +135,19 @@ function initSlider(slider) {
 // Init all standalone sliders (not inside carousels)
 document.querySelectorAll('.ba-slider:not(.ba-carousel-slide .ba-slider)').forEach(initSlider);
 
+// ===== Deferred images =====
+// Hidden hero and carousel slides keep their image in data-src/data-srcset until shown.
+function loadDeferredImages(root) {
+  root?.querySelectorAll('img[data-src]').forEach(img => {
+    if (img.dataset.srcset) {
+      img.srcset = img.dataset.srcset;
+      img.removeAttribute('data-srcset');
+    }
+    img.src = img.dataset.src;
+    img.removeAttribute('data-src');
+  });
+}
+
 // ===== Carousel with Before/After Slides =====
 document.querySelectorAll('.ba-carousel').forEach(carousel => {
   const slides = carousel.querySelectorAll('.ba-carousel-slide');
@@ -148,6 +161,7 @@ document.querySelectorAll('.ba-carousel').forEach(carousel => {
     dots[current]?.classList.remove('active');
     dots[current]?.removeAttribute('aria-current');
     current = (index + slides.length) % slides.length;
+    loadDeferredImages(slides[current]);
     slides[current].classList.add('active');
     dots[current]?.classList.add('active');
     dots[current]?.setAttribute('aria-current', 'true');
@@ -268,17 +282,7 @@ document.querySelectorAll('[data-hero-carousel]').forEach(carousel => {
   let current = 0;
   let timer = null;
 
-  // Lazy slides keep their image in data-src/data-srcset until they are needed
-  function load(slide) {
-    slide?.querySelectorAll('img[data-src]').forEach(img => {
-      if (img.dataset.srcset) {
-        img.srcset = img.dataset.srcset;
-        img.removeAttribute('data-srcset');
-      }
-      img.src = img.dataset.src;
-      img.removeAttribute('data-src');
-    });
-  }
+  const load = loadDeferredImages;
 
   function show(index) {
     slides[current].classList.remove('active');
