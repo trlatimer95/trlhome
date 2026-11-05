@@ -226,7 +226,7 @@ Do the image optimisation (P1, P2) either before or after; it is independent of 
 ### Migration steps
 
 1. In Cloudflare, add the site `trlhomesolutions.com` (Free plan). Review the imported DNS records against GoDaddy's DNS page, especially MX, TXT and any `_dmarc`/`_domainkey` records. Do not change nameservers yet.
-2. Workers & Pages, Create, Pages, Connect to Git, pick `trlatimer95/trl-website`, branch `main`, framework preset Vite (or None), build command `npm run build`, output directory `dist`, environment variable `NODE_VERSION=20`. Deploy and verify `<project>.pages.dev`.
+2. Workers & Pages, Create, Pages, Connect to Git, pick `trlatimer95/trlhome`, branch `main`, framework preset Vite (or None), build command `npm run build`, output directory `dist`, environment variable `NODE_VERSION=20`. Deploy and verify `<project>.pages.dev`.
 3. Add `public/_headers` (see below) and push; confirm headers on the preview deployment and that the contact form still submits.
 4. Custom domains tab: add `trlhomesolutions.com` and `www.trlhomesolutions.com`. Cloudflare will create the CNAME records once the zone is active.
 5. At GoDaddy, change nameservers to the two Cloudflare assigns. Wait for the zone to show Active.
