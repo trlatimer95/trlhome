@@ -19,3 +19,6 @@ desktop.ini
 .idea/
 *.swp
 *.swo
+
+# Wrangler local state
+.wrangler/
