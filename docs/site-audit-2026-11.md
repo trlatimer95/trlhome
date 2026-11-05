@@ -32,7 +32,7 @@ What changed:
 - Schema: service pages pass `image`; `Service` now has `serviceType`, `image`, provider `address` and `@id` linking to the home `HomeAndConstructionBusiness`; `areaServed` as `City` objects.
 - `public/_headers` (new): CSP, HSTS, nosniff, referrer and permissions policies, one-year cache for `/assets/*`. Ignored by GitHub Pages; takes effect on Cloudflare Pages.
 
-Still open: the Cloudflare Pages migration itself (dashboard and DNS steps in section 6), the "Licensed & Insured" wording check (S5), optional gtag deferral (P4) and `review` schema items (S2). `/projects/` mobile is at 80 because it loads 20 carousels; a further step would be lazy-loading non-active carousel slides.
+Update 2026-11-05: the site now runs on Cloudflare Pages (nameservers moved to Cloudflare, custom domain attached, `_headers` verified live: CSP, HSTS, nosniff, one-year asset cache). The GitHub Actions workflow and `public/CNAME` were removed. Still open: the "Licensed & Insured" wording check (S5), optional gtag deferral (P4) and `review` schema items (S2). `/projects/` mobile is at 80 because it loads 20 carousels; a further step would be lazy-loading non-active carousel slides.
 
 ## 1. Summary
 
