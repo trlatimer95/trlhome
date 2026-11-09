@@ -328,6 +328,16 @@
         "afterAlt": "Bathroom tile after",
         "before": "/images/portfolio/bathroom-tile/before.jpg",
         "beforeAlt": "Bathroom tile before"
+      },
+      {
+        "after": "/images/portfolio/bathroom-tile/floor-1.jpg",
+        "afterAlt": "White hexagon floor tile with black accent tiles seen from the bathroom doorway",
+        "caption": "Hex tile floor"
+      },
+      {
+        "after": "/images/portfolio/bathroom-tile/floor-2.jpg",
+        "afterAlt": "White and black hexagon tile floor laid wall to wall",
+        "caption": "Hex tile floor"
       }
     ]
   },
@@ -345,6 +355,47 @@
         "after": "/images/portfolio/bathroom-finish-subcontract/01-bathroom.jpg",
         "afterAlt": "Finished bathroom with tiled walk-in shower, patterned tile floor, wallpapered vanity wall and gold fixtures",
         "caption": "Subcontract work for a general contractor",
+        "fit": "contain"
+      }
+    ]
+  },
+  {
+    "id": "carpet-to-lvp",
+    "title": "Carpet to LVP Flooring",
+    "desc": "New luxury vinyl plank across the main floor, replacing worn carpet in the living room, family room and hallway and continuing through the kitchen, dining area and laundry.",
+    "tags": [
+      "flooring"
+    ],
+    "featured": false,
+    "slides": [
+      {
+        "after": "/images/portfolio/carpet-to-lvp/living-after.jpg",
+        "afterAlt": "Living room with new luxury vinyl plank flooring",
+        "before": "/images/portfolio/carpet-to-lvp/living-before.jpg",
+        "beforeAlt": "Living room with worn carpet before new flooring"
+      },
+      {
+        "after": "/images/portfolio/carpet-to-lvp/family-after.jpg",
+        "afterAlt": "Family room with new luxury vinyl plank flooring",
+        "before": "/images/portfolio/carpet-to-lvp/family-before.jpg",
+        "beforeAlt": "Family room with old carpet being pulled up"
+      },
+      {
+        "after": "/images/portfolio/carpet-to-lvp/hallway-after.jpg",
+        "afterAlt": "Hallway with new luxury vinyl plank flooring",
+        "before": "/images/portfolio/carpet-to-lvp/hallway-before.jpg",
+        "beforeAlt": "Hallway with worn carpet before new flooring"
+      },
+      {
+        "after": "/images/portfolio/carpet-to-lvp/kitchen-dining-after.jpg",
+        "afterAlt": "Kitchen and dining nook with new luxury vinyl plank flooring",
+        "caption": "Kitchen and dining",
+        "fit": "contain"
+      },
+      {
+        "after": "/images/portfolio/carpet-to-lvp/laundry-after.jpg",
+        "afterAlt": "Laundry room and back hall with new luxury vinyl plank flooring",
+        "caption": "Laundry and back hall",
         "fit": "contain"
       }
     ]
@@ -430,6 +481,87 @@
         "afterAlt": "Deck restoration after",
         "before": "/images/portfolio/deck-restoration/before.jpg",
         "beforeAlt": "Deck restoration before"
+      }
+    ]
+  },
+  {
+    "id": "room-rebuild-built-ins",
+    "title": "Room Rebuild &amp; Built-in Cabinets",
+    "desc": "Subcontract reconstruction after water damage: insulation, sheetrock, flooring, trim and paint. The room&rsquo;s built-in cabinets had been taken apart, so we patched the sides and the window section and reinstalled them.",
+    "tags": [
+      "carpentry",
+      "flooring",
+      "remodel"
+    ],
+    "featured": false,
+    "slides": [
+      {
+        "after": "/images/portfolio/room-rebuild-built-ins/01-built-ins.jpg",
+        "afterAlt": "White built-in cabinets and window seat reinstalled around a window",
+        "caption": "Built-ins reinstalled, before paint"
+      },
+      {
+        "after": "/images/portfolio/room-rebuild-built-ins/02-built-ins-wide.jpg",
+        "afterAlt": "Wide view of reinstalled built-in cabinets with a window seat and new flooring",
+        "caption": "Subcontract work"
+      },
+      {
+        "after": "/images/portfolio/room-rebuild-built-ins/03-in-progress.jpg",
+        "afterAlt": "Built-in cabinets partly reinstalled with new sheetrock patched below the window",
+        "caption": "In progress: cabinets going back in"
+      },
+      {
+        "after": "/images/portfolio/room-rebuild-built-ins/04-flooring.jpg",
+        "afterAlt": "New plank flooring and baseboard trim in the rebuilt room",
+        "caption": "New flooring and trim"
+      },
+      {
+        "after": "/images/portfolio/room-rebuild-built-ins/05-finished-room.jpg",
+        "afterAlt": "Finished room with fresh paint, new flooring and built-in shelves",
+        "caption": "Finished and painted",
+        "fit": "contain"
+      }
+    ]
+  },
+  {
+    "id": "stove-removal-repairs",
+    "title": "Wood Stove Removal &amp; Repairs",
+    "desc": "Removed a wood stove and its exterior stovepipe, then patched the siding where the pipe ran. In the bathroom: new sheetrock and paint, a small chase built around a pipe, LVP tile flooring and trim. We also swapped out two exterior doors and painted the trim.",
+    "tags": [
+      "handyman",
+      "exterior",
+      "carpentry"
+    ],
+    "featured": false,
+    "slides": [
+      {
+        "after": "/images/portfolio/stove-removal-repairs/01-stovepipe-before.jpg",
+        "afterAlt": "Metal stovepipe running up the exterior siding of a home before removal",
+        "caption": "Before: stovepipe on the siding",
+        "fit": "contain"
+      },
+      {
+        "after": "/images/portfolio/stove-removal-repairs/02-siding-patched.jpg",
+        "afterAlt": "Board and batten siding patched where a stovepipe was removed",
+        "caption": "Pipe removed, siding patched",
+        "fit": "contain"
+      },
+      {
+        "after": "/images/portfolio/stove-removal-repairs/03-siding-wide.jpg",
+        "afterAlt": "Side of a home with repaired siding after stovepipe removal",
+        "caption": "Finished wall",
+        "fit": "contain"
+      },
+      {
+        "after": "/images/portfolio/stove-removal-repairs/04-bathroom.jpg",
+        "afterAlt": "Small bathroom with new sheetrock, paint, LVP tile floor and trim",
+        "caption": "Bathroom: sheetrock, paint, floor and trim",
+        "fit": "contain"
+      },
+      {
+        "after": "/images/portfolio/stove-removal-repairs/05-exterior-doors.jpg",
+        "afterAlt": "Two new white exterior doors with freshly painted dark trim",
+        "caption": "Doors swapped, trim painted"
       }
     ]
   },
