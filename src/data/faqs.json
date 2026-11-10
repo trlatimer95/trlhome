@@ -1,0 +1,92 @@
+[
+  {
+    "q": "How long does a bathroom remodel take?",
+    "a": "A full bathroom remodel takes anywhere from two weeks to a month, depending on the size of the room, the materials and the scope.",
+    "tags": ["bathroom"]
+  },
+  {
+    "q": "Can we still use the bathroom during the remodel?",
+    "a": "We try to keep areas usable while we work. If major plumbing is being done or the floor has to come up, expect some interruption.",
+    "tags": ["bathroom"]
+  },
+  {
+    "q": "Do you build new decks or only repair them?",
+    "a": "Both. We build new decks, and we repair and refinish existing ones, in wood or composite.",
+    "tags": ["decks"]
+  },
+  {
+    "q": "How long does it take to finish a basement?",
+    "a": "It depends on the scope. Finishing a completely unfinished basement usually takes about a month.",
+    "tags": ["basement"]
+  },
+  {
+    "q": "Can you add egress windows and a bathroom?",
+    "a": "Yes. We install egress windows, with the concrete cutting done by a specialist we bring in, and we build basement bathrooms.",
+    "tags": ["basement"]
+  },
+  {
+    "q": "Do you build decks year-round?",
+    "a": "Usually, yes. We work on decks year-round, weather permitting.",
+    "tags": ["decks"]
+  },
+  {
+    "q": "Do you move furniture and remove the old flooring?",
+    "a": "Yes. We can move the furniture and remove the old flooring as part of the job.",
+    "tags": ["flooring"]
+  },
+  {
+    "q": "How long does an LVP flooring install take?",
+    "a": "A main-floor LVP install takes about three to five days.",
+    "tags": ["flooring"]
+  },
+  {
+    "q": "How soon can you get to a small job?",
+    "a": "Usually within two to three days.",
+    "tags": ["handyman"]
+  },
+  {
+    "q": "Can you work from a home inspection report?",
+    "a": "Usually, yes. Sometimes we need a site visit first to clarify items and take measurements.",
+    "tags": ["punchlists"]
+  },
+  {
+    "q": "How quickly can you finish a punchlist?",
+    "a": "We can usually have a punchlist done within a week.",
+    "tags": ["punchlists"]
+  },
+  {
+    "q": "Are estimates free?",
+    "a": "Yes, estimates are free. For some handyman jobs we can quote from photos or give a flat price, then finish the work on the first visit.",
+    "tags": ["home", "handyman", "punchlists"]
+  },
+  {
+    "q": "Is there a minimum job size?",
+    "a": "No job is too small, but we do have a $150 minimum charge.",
+    "tags": ["home", "handyman"]
+  },
+  {
+    "q": "Do you handle permits?",
+    "a": "Yes. When a project needs a permit we take care of it, unless you would rather handle it yourself.",
+    "tags": ["home", "basement", "bathroom", "decks"]
+  },
+  {
+    "q": "How does payment work?",
+    "a": "Projects start with a 50% deposit. Larger projects are then paid in milestones as the work progresses, and small jobs are paid on completion. We accept cash, check and card, and prefer cash or check.",
+    "tags": ["home", "basement", "bathroom", "decks", "flooring", "punchlists"]
+  },
+  {
+    "q": "Who buys the materials?",
+    "a": "We usually do. If there are specific materials you want to pick out and buy yourself, that works too.",
+    "tags": ["home", "handyman", "flooring"]
+  },
+  {
+    "q": "Do you do all of the work yourselves?",
+    "a": "Our own crews handle the framing, sheetrock, flooring, tile, trim and carpentry. We bring in trusted trades for plumbing, electrical, HVAC and roofing, and for some siding, window, carpet and large painting work. We coordinate them so you deal with one company.",
+    "tags": ["home", "basement", "bathroom", "decks", "punchlists"]
+  },
+  {
+    "q": "What areas do you serve?",
+    "a": "All of Spokane County, including Spokane and Spokane Valley, plus Post Falls and Coeur d'Alene in Idaho. We are licensed in both Washington and Idaho.",
+    "tags": ["home"]
+  }
+]

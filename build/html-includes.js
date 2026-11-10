@@ -3,6 +3,7 @@
 //   <!--@include name key="value" ...-->   inlines src/partials/name.html, replacing {{key}}
 //   <!--@projects tags="a,b" limit="4"-->  renders portfolio cards from src/data/projects.json
 //   <!--@list items="one|two|three"-->     renders a check-mark list
+//   <!--@faq tags="home" title=".."-->      renders questions from src/data/faqs.json (+ FAQPage data)
 //   <!--@img src="/images/x.jpg" alt=".." sizes=".." loading="lazy" lazy="data"-->
 //                                          renders a responsive <img> (see build/images.js)
 //   <i class="fas fa-name"></i>            is replaced by an inline SVG from Font Awesome Free
@@ -15,6 +16,7 @@ import { responsiveImg } from './images.js';
 const root = process.cwd();
 const partialsDir = path.join(root, 'src/partials');
 const projectsFile = path.join(root, 'src/data/projects.json');
+const faqsFile = path.join(root, 'src/data/faqs.json');
 const iconsDir = path.join(root, 'node_modules/@fortawesome/fontawesome-free/svgs');
 
 const CARD_SIZES = '(min-width: 1024px) 400px, (min-width: 768px) 50vw, 100vw';
@@ -133,6 +135,42 @@ function renderList(attrs) {
       </ul>`;
 }
 
+// ---- FAQs: <!--@faq tags="home" title="..."--> renders questions from src/data/faqs.json
+// as an accordion (native <details>, no JS) plus FAQPage structured data.
+const escHtml = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+function renderFaq(attrs) {
+  const tags = (attrs.tags || '').split(',').map((s) => s.trim()).filter(Boolean);
+  const faqs = JSON.parse(fs.readFileSync(faqsFile, 'utf8')).filter((f) => f.tags.some((t) => tags.includes(t)));
+  if (!faqs.length) throw new Error(`[html-includes] no FAQs for tags: ${attrs.tags}`);
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  };
+  const items = faqs
+    .map((f) => `
+        <details class="group bg-white border border-gray-200 rounded-xl">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none [&::-webkit-details-marker]:hidden px-6 py-5 font-bold text-gray-900">
+            <span>${escHtml(f.q)}</span>
+            <i class="fas fa-chevron-down text-primary-600 transition-transform group-open:rotate-180"></i>
+          </summary>
+          <p class="px-6 pb-5 text-gray-600 leading-relaxed">${escHtml(f.a)}</p>
+        </details>`)
+    .join('');
+  return `<!-- ===== FAQ ===== -->
+  <section id="faq" class="section-padding bg-gray-50">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-10">
+        <span class="text-primary-600 font-semibold text-sm uppercase tracking-wider">FAQ</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mt-2">${attrs.title || 'COMMON QUESTIONS'}</h2>
+      </div>
+      <div class="space-y-3">${items}
+      </div>
+    </div>
+    <script type="application/ld+json">${JSON.stringify(schema).replace(/</g, '\\u003c')}</script>
+  </section>`;
+}
+
 // ---- Icons: <i class="fas fa-star text-xs"></i> -> inline <svg class="fa-icon text-xs">
 const iconCache = new Map();
 const STYLE_DIR = { fas: 'solid', far: 'regular', fab: 'brands' };
@@ -161,13 +199,14 @@ function replaceIcons(html) {
 
 export function processHtml(html) {
   for (let depth = 0; depth < 5; depth++) {
-    const next = html.replace(/<!--@(include|projects|list|img)\s*([\s\S]*?)-->/g, (_, kind, rest) => {
+    const next = html.replace(/<!--@(include|projects|list|img|faq)\s*([\s\S]*?)-->/g, (_, kind, rest) => {
       if (kind === 'include') {
         const [, name, attrStr] = rest.trim().match(/^([\w-]+)\s*([\s\S]*)$/);
         return renderPartial(name, parseAttrs(attrStr));
       }
       if (kind === 'projects') return renderProjects(parseAttrs(rest));
       if (kind === 'img') return responsiveImg(parseAttrs(rest));
+      if (kind === 'faq') return renderFaq(parseAttrs(rest));
       return renderList(parseAttrs(rest));
     });
     if (next === html) break;
@@ -181,7 +220,7 @@ export default function htmlIncludes() {
     name: 'html-includes',
     transformIndexHtml: { order: 'pre', handler: processHtml },
     handleHotUpdate({ file, server }) {
-      if (file.includes(`${path.sep}partials${path.sep}`) || file.endsWith('projects.json')) {
+      if (file.includes(`${path.sep}partials${path.sep}`) || file.endsWith('projects.json') || file.endsWith('faqs.json')) {
         server.ws.send({ type: 'full-reload' });
         return [];
       }

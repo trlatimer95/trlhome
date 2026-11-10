@@ -7,7 +7,7 @@
     "@type": "HomeAndConstructionBusiness",
     "@id": "https://trlhomesolutions.com/#business",
     "name": "TRL Home Solutions",
-    "description": "Family-owned remodeling contractor and handyman in Spokane Valley, WA. Big projects, small jobs, one local crew.",
+    "description": "Family-owned remodeling contractor and handyman in Spokane Valley, WA. Big projects, small jobs, local crews.",
     "url": "https://trlhomesolutions.com",
     "telephone": "+1-509-210-5010",
     "email": "tyler@trlhomesolutions.com",
@@ -21,16 +21,42 @@
     },
     "openingHours": ["Mo-Fr 09:00-17:00"],
     "priceRange": "$$",
-    "areaServed": ["Spokane Valley", "Spokane"],
+    "founder": { "@type": "Person", "name": "Tyler Latimer" },
+    "logo": "https://trlhomesolutions.com/images/logo/icon-512.png",
+    "areaServed": [
+      { "@type": "City", "name": "Spokane Valley", "containedInPlace": { "@type": "State", "name": "Washington" } },
+      { "@type": "City", "name": "Spokane", "containedInPlace": { "@type": "State", "name": "Washington" } },
+      { "@type": "AdministrativeArea", "name": "Spokane County", "containedInPlace": { "@type": "State", "name": "Washington" } },
+      { "@type": "City", "name": "Post Falls", "containedInPlace": { "@type": "State", "name": "Idaho" } },
+      { "@type": "City", "name": "Coeur d'Alene", "containedInPlace": { "@type": "State", "name": "Idaho" } }
+    ],
+    "hasCredential": [
+      { "@type": "EducationalOccupationalCredential", "credentialCategory": "license", "name": "Washington contractor license TRLHOHS762MU" },
+      { "@type": "EducationalOccupationalCredential", "credentialCategory": "license", "name": "Idaho contractor license 7671976" }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Remodeling and handyman services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Basement Remodeling", "url": "https://trlhomesolutions.com/basement-remodeling/" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bathroom Remodeling", "url": "https://trlhomesolutions.com/bathroom-remodeling/" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Deck Building, Repair and Restoration", "url": "https://trlhomesolutions.com/decks/" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "LVP Flooring and Tile Installation", "url": "https://trlhomesolutions.com/flooring-tile/" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Finish Carpentry and Trim", "url": "https://trlhomesolutions.com/finish-carpentry/" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Handyman Services", "url": "https://trlhomesolutions.com/handyman/" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pre-Sale and Post-Sale Punchlists", "url": "https://trlhomesolutions.com/punchlists/" } }
+      ]
+    },
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "5.0",
-      "reviewCount": "8",
+      "reviewCount": "10",
       "bestRating": "5",
       "worstRating": "1"
     },
     "sameAs": [
-      "https://www.facebook.com/326254047248594"
+      "https://www.facebook.com/326254047248594",
+      "https://www.google.com/maps?cid=3691033244609124951"
     ]
   }
   </script>
@@ -75,10 +101,10 @@
       <h1 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-4 max-w-4xl">
         SPOKANE VALLEY REMODELING CONTRACTOR &amp; HANDYMAN
       </h1>
-      <p class="text-2xl md:text-3xl font-bold text-primary-500 mb-6">Big projects. Small jobs. One local crew.</p>
+      <p class="text-2xl md:text-3xl font-bold text-primary-500 mb-6">Big projects. Small jobs. Local crews.</p>
 
       <p class="text-lg md:text-xl text-gray-300 max-w-2xl mb-8 leading-relaxed">
-        Basements, bathrooms, kitchens, decks, flooring and finish carpentry &mdash; plus the repairs
+        Basements, bathrooms, decks, flooring and finish carpentry &mdash; plus the repairs
         and punchlists that get a home ready to live in or ready to sell.
       </p>
 
@@ -154,16 +180,7 @@
           <span class="text-primary-600 font-semibold text-sm">Learn more <i class="fas fa-arrow-right ml-1"></i></span>
         </a>
 
-        <a href="/kitchens/" class="block bg-white rounded-2xl p-8 border border-gray-100 card-hover animate-on-scroll delay-200">
-          <div class="w-14 h-14 bg-primary-50 rounded-xl flex items-center justify-center mb-5">
-            <i class="fas fa-kitchen-set text-primary-600 text-xl"></i>
-          </div>
-          <h4 class="text-lg font-bold text-gray-900 mb-3">Kitchens</h4>
-          <p class="text-gray-500 leading-relaxed mb-4">Cabinet refreshes, countertops, backsplash, islands and new flooring to bring your kitchen up to date.</p>
-          <span class="text-primary-600 font-semibold text-sm">Learn more <i class="fas fa-arrow-right ml-1"></i></span>
-        </a>
-
-        <a href="/decks/" class="block bg-white rounded-2xl p-8 border border-gray-100 card-hover animate-on-scroll">
+        <a href="/decks/" class="block bg-white rounded-2xl p-8 border border-gray-100 card-hover animate-on-scroll delay-200">
           <div class="w-14 h-14 bg-primary-50 rounded-xl flex items-center justify-center mb-5">
             <i class="fas fa-tree text-primary-600 text-xl"></i>
           </div>
@@ -172,7 +189,7 @@
           <span class="text-primary-600 font-semibold text-sm">Learn more <i class="fas fa-arrow-right ml-1"></i></span>
         </a>
 
-        <a href="/flooring-tile/" class="block bg-white rounded-2xl p-8 border border-gray-100 card-hover animate-on-scroll delay-100">
+        <a href="/flooring-tile/" class="block bg-white rounded-2xl p-8 border border-gray-100 card-hover animate-on-scroll">
           <div class="w-14 h-14 bg-primary-50 rounded-xl flex items-center justify-center mb-5">
             <i class="fas fa-layer-group text-primary-600 text-xl"></i>
           </div>
@@ -181,7 +198,7 @@
           <span class="text-primary-600 font-semibold text-sm">Learn more <i class="fas fa-arrow-right ml-1"></i></span>
         </a>
 
-        <a href="/finish-carpentry/" class="block bg-white rounded-2xl p-8 border border-gray-100 card-hover animate-on-scroll delay-200">
+        <a href="/finish-carpentry/" class="block bg-white rounded-2xl p-8 border border-gray-100 card-hover animate-on-scroll delay-100">
           <div class="w-14 h-14 bg-primary-50 rounded-xl flex items-center justify-center mb-5">
             <i class="fas fa-ruler-combined text-primary-600 text-xl"></i>
           </div>
@@ -246,7 +263,7 @@
       <div class="text-center mb-12">
         <span class="text-primary-500 font-semibold text-sm uppercase tracking-wider">Our Difference</span>
         <h2 class="text-3xl md:text-4xl font-extrabold text-white mt-2">WHY CHOOSE US</h2>
-        <p class="text-gray-400 mt-4 max-w-2xl mx-auto">A small crew led by the owners, and the same people on your job from start to finish.</p>
+        <p class="text-gray-400 mt-4 max-w-2xl mx-auto">We&rsquo;re a family-owned Spokane Valley company with our own in-house crews. The owner plans your job and stays involved until it&rsquo;s finished.</p>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -255,15 +272,15 @@
             <i class="fas fa-ruler-combined text-primary-500 text-2xl"></i>
           </div>
           <h3 class="text-xl font-bold text-white mb-3">Big Jobs &amp; Small Jobs</h3>
-          <p class="text-gray-400 leading-relaxed">A full basement remodel or a single door replacement &mdash; you get the same care and attention to detail.</p>
+          <p class="text-gray-400 leading-relaxed">Whether it&rsquo;s a full basement remodel or a single door replacement, you get the same care and attention to detail.</p>
         </div>
 
         <div class="bg-white/5 border border-white/10 rounded-2xl p-8 text-center card-hover animate-on-scroll delay-100">
           <div class="w-16 h-16 bg-primary-600/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
             <i class="fas fa-people-group text-primary-500 text-2xl"></i>
           </div>
-          <h3 class="text-xl font-bold text-white mb-3">Hands-On Ownership</h3>
-          <p class="text-gray-400 leading-relaxed">We do our best to be the ones performing the work on every project. When subcontractors are needed, they're fully vetted and work under our direct supervision.</p>
+          <h3 class="text-xl font-bold text-white mb-3">In-House Crews</h3>
+          <p class="text-gray-400 leading-relaxed">The people on your job are our own employees. The owner scopes each project and lines it out with the crew. Any subcontractors we bring in are vetted and supervised.</p>
         </div>
 
         <div class="bg-white/5 border border-white/10 rounded-2xl p-8 text-center card-hover animate-on-scroll delay-200">
@@ -271,7 +288,7 @@
             <i class="fas fa-thumbs-up text-primary-500 text-2xl"></i>
           </div>
           <h3 class="text-xl font-bold text-white mb-3">We Stand Behind Our Work</h3>
-          <p class="text-gray-400 leading-relaxed">If something isn't right, tell us. We're local, we answer the phone, and we'll make it right.</p>
+          <p class="text-gray-400 leading-relaxed">We&rsquo;re local and we answer the phone. If something isn&rsquo;t right, tell us and we&rsquo;ll make it right.</p>
         </div>
 
         <div class="bg-white/5 border border-white/10 rounded-2xl p-8 text-center card-hover animate-on-scroll delay-300">
@@ -279,7 +296,7 @@
             <i class="fas fa-dollar-sign text-primary-500 text-2xl"></i>
           </div>
           <h3 class="text-xl font-bold text-white mb-3">Fair, Transparent Pricing</h3>
-          <p class="text-gray-400 leading-relaxed">Free estimates and clear quotes. Quality work shouldn't break the bank, and we don't cut corners to make it so.</p>
+          <p class="text-gray-400 leading-relaxed">Estimates are free and quotes are clear. We keep quality work affordable without cutting corners to get there.</p>
         </div>
       </div>
     </div>
@@ -295,14 +312,14 @@
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <div class="animate-on-scroll">
           <span class="text-primary-600 font-semibold text-sm uppercase tracking-wider">About Us</span>
-          <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mt-2 mb-6">A Local Crew You Can Count On</h2>
+          <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mt-2 mb-6">Local Crews You Can Count On</h2>
           <p class="text-gray-600 leading-relaxed mb-6">
             TRL Home Solutions is a family-owned company based in Spokane Valley, Washington. We take on remodels,
             basements, bathrooms, decks, flooring and finish carpentry, and we still answer the call for the repairs
             and small jobs that keep a home running.
           </p>
           <p class="text-gray-600 leading-relaxed mb-8">
-            Our crew is led by the owners, and any subcontractors we bring in are vetted and directly supervised.
+            Our crews are our own employees, and the owner scopes and manages every job. Any subcontractors we bring in are vetted and supervised.
             We also work with local realtors to help sellers get homes market-ready and buyers get settled after closing.
           </p>
 
@@ -367,6 +384,8 @@
       </div>
     </div>
   </section>
+
+<!--@faq tags="home"-->
 
 <!--@include contact-->
 

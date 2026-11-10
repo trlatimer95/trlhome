@@ -118,7 +118,7 @@
       "kitchen",
       "remodel"
     ],
-    "featured": true,
+    "featured": false,
     "slides": [
       {
         "after": "/images/portfolio/kitchen-remodel/after.jpg",
